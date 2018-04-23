@@ -24,7 +24,8 @@ function initPagesRoutes(app) {
   Promise.all([db.getCities(), db.getDeliveryAddresses()]).then(data => {
     const cities = data[0];
     const deliveryAddresses = data[1];
-    const domain = 'localhost:4400';
+    // const domain = 'localhost:4400';
+    const domain = '46.36.218.230:4400';
     const fromEmail = 'rb@ray-bit.ru';
     const toEmail = 'rb@ray-bit.ru';
 
