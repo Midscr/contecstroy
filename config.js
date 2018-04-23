@@ -1,8 +1,8 @@
 const db = {
   host: 'localhost',
-  user: 'miranix_usr',
-  password: 'yiczZblSet0o2V3p',
-  database: 'miranix'
+  user: 'contecstroy_usr',
+  password: 'NXrfDUDXDQenH6w9',
+  database: 'contecstroy'
 };
 
 module.exports = db;
