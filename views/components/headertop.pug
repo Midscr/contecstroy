@@ -1,0 +1,8 @@
+header.headertop
+  .container
+    .row
+      ul.headertop__list.col-xs-12
+        each item in navTop
+          li.headertop__nav.col-md-2.col-sm-4.col-xs-6
+            img.headertop__icon(src= item.icon)
+            a(href= item.link)= item.title

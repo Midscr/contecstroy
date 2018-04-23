@@ -1,0 +1,20 @@
+section.card
+  ul.card__list.col-xs-12
+    each app in infoMain.apps
+      li.col-md-3.col-sm-6.text-center
+        .card__items
+          img.card__img(style={"background-image": "url("+app.image+")"})
+          .card__blocks  
+            .card__block
+              p.card__start= app.name
+              ul.card__circles
+                each item in app.list
+                  li.card__circle= item
+                
+            .card__block2  
+              .card__recommendations
+                a(href=app.rec.link)= app.rec.name
+              .card__price
+                p= app.cost
+                p= app.period
+              span.card__btn.btn.js-callback  РАССЧИТАТЬ СТОИМОСТЬ

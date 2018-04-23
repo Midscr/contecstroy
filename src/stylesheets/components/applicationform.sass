@@ -1,0 +1,109 @@
+.form
+  @media(max-width: 747px)
+    text-align: center
+  &.bg-white
+    .form
+      &__h3
+        color: $color-dark-gray
+      &__btn
+        background-color: $color-red
+        &:hover
+          background-color: $color-red
+      &__checkbox-custom
+        border: 1px solid $color-green
+      &__checkbox-custom
+        border: 1px solid $color-green
+      &__checkbox:checked + .form__checkbox-custom:before,
+      &__checkbox:checked + .form__checkbox-custom:after
+        border-right: 4px solid $color-green
+        background-color: $color-white
+      &__label
+        color: $color-dark-gray
+  &.box
+    .form
+      &__input
+        width: 70%
+        
+
+
+  
+  &__container
+    padding: 18px 0
+  
+  &__h3
+    color: $color-white
+    font-weight: 300
+    font-size: 20px
+  &__btn
+    background-color: $color-dark-gray
+    color: $color-white
+    font-size: 16px
+    font-weight: 300
+    padding: 11px 21px
+    &:hover
+      background-color: $color-dark-gray
+      color: $color-white
+    @media(max-width: 747px)
+      margin-top: 5px
+  &__input
+    padding: 8px 39px 8px 10px
+    border-radius: 5px
+    background-color: $background-color-light-gray
+    color: black
+    font-size: 16px
+    font-weight: 300
+    margin-right: 20px
+    outline-color: $color-dark-gray
+    @media(max-width: 747px)
+      margin-right: 5px
+      margin-top: 5px        
+  &__checkbox
+    display: none  
+  &__checkbox-custom
+    position: relative
+    width: 20px
+    height: 20px 
+    border: 1px solid $color-white
+  &__checkbox-custom, &__label
+    display: inline-block
+    vertical-align: middle
+  &__checkbox:checked + &__checkbox-custom:before,
+  &__checkbox:checked + &__checkbox-custom:after
+    content: ''
+    border-right: 4px solid $color-white
+    position: absolute
+    opacity: 0
+    border-radius: 30%
+    background-color: $color-red 
+  &__checkbox:checked + &__checkbox-custom:after 
+    top: 1px
+    right: -5px
+    width: 10px
+    height: 20px
+    transform: rotate(30deg)
+    transition: all .3s ease
+  &__checkbox:checked + &__checkbox-custom:before
+    width: 7px
+    height: 11px
+    bottom: -3px
+    right: 3px
+    transform: rotate(-30deg)
+    z-index: 1
+    transition: all .3s ease
+  & input:checked + &__checkbox-custom:after,
+  & input:checked + &__checkbox-custom:before
+    opacity: 1
+  &__label
+    color: $color-white
+    margin-left: 15px
+    font-weight: 300
+    font-size: 12px
+
+.bug
+  background-image: url(/img/icon.png)
+  background-repeat: no-repeat 
+  background-position-x: right
+  background-position-y: center
+
+// .bug-check 
+//   border: 1px solid $color-red !important

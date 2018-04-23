@@ -1,0 +1,150 @@
+-
+  let navList = [{link:'#', text:'Услуги и цены'},
+  {link:'#', text:'Оборудование'},
+  {link:'#', text:'Наши проекты'},
+  {link:'#', text:'Наши проекты'}];
+-
+  let logoList = ['/img/arlift-logo.png',,
+  '/img/hilti-logo.png'];
+-
+  let logoList2 = ['/img/isopan-logo.png',
+  '/img/belpanel-logo.png',
+  '/img/trimo-logo.png',
+  '/img/mp-logo.png',
+  '/img/teplant-logo.png']; 
+
+include ./applicationform   
+
+section.mainmaterials
+  .main__top
+    .main__text
+      .container
+        h1.main__h1 Полимерные полы <в Городе>
+        h2.main__h2 Красивые работающие сайты для бизнеса
+  .container
+    .row
+      .main__twoblocks
+        .main__prev.col-md-6
+          include ./breadcrumbs
+        .main__next.col-md-6
+          ul.main__nav
+            ul.main__nav
+            each item in navList
+              li.main__items
+                a(href=item.link)=item.text
+      .mainmaterials__par.editor
+        p Выполним профессиональный монтаж кровли из сэндвич панелей <в Городе> качественно, быстро, по доступной цене. ООО «КонтекСтрой» - это компания мастеров с многолетним опытом работы. 
+      .mainmaterials__par.editor
+        p При установке кровли из сэндвич панелей мы используем только высококачественные материалы известных торговых марок: ТехноНиколь, Пластфойл, Пеноплэкс, Izoroc. В распоряжении наших специалистов cварочный автомат горячего воздуха LEISTER VARIMAT V2, шуруповёрты Hilti.
+    .row
+      .mainmaterials__block.col-md-12
+        .mainmaterials__listing.col-md-6
+          .mainmaterials__list Мягкая кровля используется при оборудованиях:
+          ul 
+            li.mainmaterials__markeritem
+              img(src='/img/iconmarker.png')
+              span складских помещениях;
+            li.mainmaterials__markeritem
+              img(src='/img/iconmarker.png')
+              span подземных парковках автомобилях;
+            li.mainmaterials__markeritem 
+              img(src='/img/iconmarker.png')
+              span гаражных помещениях;
+            li.mainmaterials__markeritem 
+              img(src='/img/iconmarker.png')
+              span офисах;
+            li.mainmaterials__markeritem
+              img(src='/img/iconmarker.png')
+              span помещениях торгово-выставочных залов;
+            li.mainmaterials__markeritem
+              img(src='/img/iconmarker.png')
+              span  предприятиях пищевой промышленности;
+            li.mainmaterials__markeritem
+              img(src='/img/iconmarker.png')
+              span  лабораториях и медицинских центрах.   
+        .mainmaterials__applicationblock.main__applicationform.col-md-6 
+          +applicationForm()(containerClass='box')
+    .editor.mainmaterials__rates  
+      span Расценки на услуги
+    table.mainmaterials__table.col-xs-12
+      thead
+        tr
+          th.mainmaterials__headers Наименование работ
+          th.mainmaterials__headers Ед. изм.
+          th.mainmaterials__headers Цена (руб.)
+      tbody.mainmaterials__body   
+        tr
+          td.mainmaterials__items Шлифовка бетонного пола
+          td.mainmaterials__items м2
+          td.mainmaterials__items 70 руб.
+        tr  
+          td.mainmaterials__items Обеспыливание промышленным пылесосом
+          td.mainmaterials__items м2
+          td.mainmaterials__items 20 руб.
+        tr  
+          td.mainmaterials__items Нанесение грунтовки (в 1-3 слоя)
+          td.mainmaterials__items м2
+          td.mainmaterials__items 80 руб.
+        tr  
+          td.mainmaterials__items Шпаклевание основания с кварцевым песком и промежуточной шлифовкой
+          td.mainmaterials__items м2
+          td.mainmaterials__items 100 руб.
+        tr  
+          td.mainmaterials__items Нанесение финишного наливного слоя с предварительной шлифовкой и обеспыливанием
+          td.mainmaterials__items м2
+          td.mainmaterials__items 240 руб.
+        tr
+          td.mainmaterials__items Нанесение тонкослойного финишного покрытия
+          td.mainmaterials__items м2
+          td.mainmaterials__items 150 руб.
+    blockquote.main__blockquote.blockquote.col-xs-10
+      p Внимание! Стоимость на услуги может меняться в зависимости от объема и сложности работ
+    .mainmaterials__images.col-md-6
+      img(src="/img/images1.jpg")
+    .mainmaterials__equipment.col-md-6
+      .editor
+        span Особенности облицовочных сэндвич панелей 
+        p Сэндвич панели – пластиковые изделия, предназначенные для наружной отделки зданий. Представлены они в широком ассортименте, отличаются фактурой, цветом, поэтому могут использоваться для реализации различных дизайнерских решений. Ключевые преимущества стеновых сэндвич панелей:
+        ul
+          li.mainabout__textitem 
+            img(src='/img/iconmarker.png')
+            span устойчивость к возгоранию;
+          li.mainabout__textitem 
+            img(src='/img/iconmarker.png')
+            span экологическая безопасность (не выделяют токсических веществ);
+          li.mainabout__textitem 
+            img(src='/img/iconmarker.png')
+            span стойкость к деформациям, воздействию влаги и агрессивных химических компонентов;
+          li.mainabout__textitem 
+            img(src='/img/iconmarker.png')
+            span не повреждаются коррозией;
+          li.mainabout__textitem 
+            img(src='/img/iconmarker.png')
+            span цвет сэндвич панелей не выцветает, не тускнеет;
+          li.mainabout__textitem 
+            img(src='/img/iconmarker.png')
+            span они не требуют особого ухода         
+        p К достоинствам отделочного материала можно также отнести доступную цену, эстетичность, долговечность. Обратитесь в нашу компанию, и мы профессионально выполним облицовку здания сэндвич панелями <в городе>, с использованием вакуумных фиксаторов и современного оборудования, силами профессиональной бригады.
+      ul.mainmaterials__imgList
+        each item in logoList
+          li.mainmaterials__imgs
+            img(src=item)
+    .mainmaterials__equipment.col-md-6
+      .editor
+        span Облицовка сэндвич панелями: цена, сроки, гарантия качества
+        p Интересует цена и сроки? Позвоните нам или заполните форму онлайн. Наши специалисты предоставят подробную информацию об условиях сотрудничества. Стоимость облицовки здания сэндвич панелями зависит от общей площади поверхностей, разновидности материала. 
+        P В нашей компании работают узкоспециализированные мастера с многолетним опытом. Они знают всё о том, как отделывать фасады стеновыми панелями. Мы гарантируем высокое качество и точность работ при облицовке зданий сэндвич панелями <в городе>. 
+      ul.mainmaterials__imgList2
+        each item in logoList2
+          li.mainmaterials__imgs.width
+            img(src=item)        
+    .mainmaterials__images.col-md-6
+      img(src="/img/images2.jpg")
+    .row
+      .main__amenities.editor.col-md-12
+        span Отзыв по одному из поектов  
+  .mainmaterials__slider
+    include ./slider
+  .main__applicationform
+    .container
+      +applicationForm()                  

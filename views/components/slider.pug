@@ -1,0 +1,17 @@
+-
+
+section.slider
+  .slider__frame
+    ul.slider__list
+      li.slider__item
+        .slider__left
+          img.slider__img(src= infoMain.review.image)
+        .slider__right
+          p= 'Компания: ' + infoMain.review.companyName
+          p= 'Сфера деятельности: ' + infoMain.review.field
+          p= 'Представитель: ' + infoMain.review.agent
+          p= 'Тип работы: ' + infoMain.review.work
+          .slider__comment
+            p= infoMain.review.comment
+  .slider__prev
+  .slider__next 

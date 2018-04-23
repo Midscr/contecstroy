@@ -1,0 +1,62 @@
+-
+  let navList = [{link:'#', text:'Услуги и цены'},
+  {link:'#', text:'Оборудование'},
+  {link:'#', text:'Наши проекты'},
+  {link:'#', text:'Наши проекты'}];
+-
+  let fotoList = ['/img/gray-foto.jpg', '/img/gray-foto.jpg', '/img/gray-foto.jpg', '/img/gray-foto.jpg', '/img/gray-foto.jpg', '/img/gray-foto.jpg', '/img/gray-foto.jpg', '/img/gray-foto.jpg', '/img/gray-foto.jpg'];
+
+include ./applicationform
+
+main.mainpotfolio
+  .container
+    .row
+      .main__twoblocks
+        .main__prev.col-md-6
+          include ./breadcrumbs
+        .main__next.col-md-6
+          ul.main__nav
+            each item in navList
+              li.main__items
+                a(href=item.link)=item.tex
+      .editor
+        span Проект: г. Ипатово, ОАО «Ипатовский пивзавод»
+      .mainpotfolio__prev.col-xs-12
+        .mainpotfolio__left.col-md-6.col-sm-6
+          .editor.mainpotfolio__text
+            p.mainpotfolio__bold Расположение:
+            p.mainpotfolio__light Монтаж полимерных полов
+          .editor.mainpotfolio__text
+            p.mainpotfolio__bold Объем работ и сроки исполнения
+            p.mainpotfolio__light Объем: 2 245 кв.м.; Период работ: - 07.2012г.
+        .mainpotfolio__map.col-md-6.col-sm-6
+          img(src='/img/map.jpg')
+      .mainpotfolio__next.col-xs-12    
+        .mainpotfolio__left.col-md-6.col-sm-6
+          .editor
+            span Описание проекта
+          .editor.mainpotfolio__text
+            p.mainpotfolio__light Использованный материал для полов: «Sika»263 SL, Двухкомпонентная эпоксидная композиция высоко армированная кварцевым песком
+        .mainpotfolio__map.col-md-6.col-sm-6
+          iframe.mainpotfolio__video(src="https://www.youtube.com/embed/casgv9Y8I1w?ecver=2"  height="300" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)
+    .row  
+      .mainproects__form
+         +applicationForm()(containerClass='bg-white')
+      .editor
+        span Фото с объекта  
+      ul.mainpotfolio__fotoList
+        each item in fotoList
+          li.mainpotfolio__items
+            img.mainpotfolio__img(src=item)
+      .mainproects__buttons
+          a(href='#').mainproects__button.btn 1
+          a(href='#').mainproects__button.btn 2
+          a(href='#').mainproects__button.btn 3
+          a(href='#').mainproects__button.btn 4
+          a(href='#').mainproects__button.btn 5
+          a(href='#').mainproects__button.btn 6
+          a(href='#').mainproects__button.btn 7
+          a(href='#').mainproects__button.btn 8
+  .main__applicationform
+    .container
+      +applicationForm()

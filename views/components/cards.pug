@@ -1,0 +1,16 @@
+section.cards
+  .row
+    ul.cards__list.col-md-12
+      each item in contactInfo.leaders
+        li.col-md-3.col-sm-6.text-center
+          .cards__container
+            .cards__card
+              .cards__foto(style= "background-image: url("+item.thumb+")")
+              p.cards__name=item.name
+              p.cards__position=item.position
+              .cards__prev
+                span.cards__experiencehead Образование:
+                span.cards__education=item.edu
+              .cards__next
+                span.cards__experiencehead  Опыт в строительстве:
+                span.cards__experience=item.exp

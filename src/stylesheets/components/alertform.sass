@@ -1,0 +1,138 @@
+.vex-overlay
+  animation: vex-fadein .5s
+  position: fixed
+  z-index: 1111
+  background: rgba(0, 0, 0, 0.4)
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+.vex, .vex-theme-default
+  padding-top: 80px
+  padding-bottom: 240px
+.vex
+  position: fixed
+  overflow: auto
+  z-index: 1111
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0    
+.vex-content
+  border-radius: 3px 
+  box-shadow: 0px 5px 24px 0px rgba(0, 0, 0, 0.07)
+  background-color: $color-alert
+  margin: 0 auto
+  padding: 44px
+  width: 774px
+  height: auto
+  line-height: 2em
+  position: relative
+  @media(max-width: 1200px)
+    width: 65%
+  @media(max-width: 806px)
+    width: 90% 
+    padding-bottom: 65px 
+.vex-dialog-form
+  text-align: center
+  position: relative  
+.vex-dialog-message
+  font-weight: 700
+  font-size: 24px
+  color: $color-dark-gray
+  text-align: left
+  padding-bottom: 35px
+  padding-left: 5px
+  @media(max-width: 888px)
+    display: inline-block
+.vex-dialog-input
+  & input
+    padding: 5px 39px 5px 10px
+    border-radius: 5px
+    background-color: $color-white
+    border: 1px solid $color-gray-line
+    color: black
+    font-size: 16px
+    font-weight: 300
+    margin-bottom: 12px
+    outline: none
+    display: block
+    @media(max-width: 888px)
+      padding: 5px 0 5px 10px
+    @media(max-width: 806px)
+      width: 100%  
+  @media(max-width: 1200px)
+    text-align: center
+    
+.vex-dialog-input
+  & textarea
+    width: 100%
+    padding-left: 10px
+    border-radius: 5px
+    background-color: $color-white
+    color: black
+    font-size: 16px
+    font-weight: 300
+    outline: none 
+    border: 1px solid $color-gray-line
+.vex-input-1, .vex-input-2
+  display: inline-block
+  @media(max-width: 806px)
+    display: block
+.vex-input-1
+  vertical-align: top  
+.vex-input-2
+  width: 57%
+  margin-left: 40px 
+  @media(max-width: 1200px)
+    margin-left: 25px
+    width: 47%
+  @media(max-width: 888px)
+    margin-left: 40px
+  @media(max-width: 806px)
+    width: 100%
+    margin-top: 10px
+    margin-left: 0                 
+.vex-dialog-button
+  color: $color-white
+  background-color: $color-red
+  border: 1px solid $color-red
+  font-size: 16px
+  font-weight: 300 
+  padding: 5px 34px
+  border-radius: 5px
+  @media(max-width: 888px)
+    padding: 5px 13px
+  @media(max-width: 806px)
+    display: none
+.vex-dialog-button2
+  display: none
+  color: $color-white
+  background-color: $color-red
+  border: 1px solid $color-red
+  font-size: 16px
+  font-weight: 300 
+  padding: 5px 0
+  border-radius: 5px
+  @media(max-width: 806px)
+    display: initial
+    width: 100%
+    position: absolute
+    top: 100%
+    right: 0          
+.vex-close
+  position: absolute
+  top: 0
+  right: 0
+  cursor: pointer
+  &:before
+    position: absolute
+    content: "\00D7"
+    font-size: 26px
+    height: 31px
+    width: 30px
+    text-align: center
+    top: 3px
+    right: 3px
+    color: $color-dark-gray
+    background: transparent

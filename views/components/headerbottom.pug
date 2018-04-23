@@ -1,0 +1,35 @@
+-
+  //- let navBottom = [{link: 'index.html', title: 'Главная'},
+  //-   {link: 'materials.html', title: 'Промышленные полы', subMenu: [{links: "#", text: 'Полимерные полы'}, {links: "industrial.html", text: 'Бетонные полы'}, {links: "#", text: 'Топпинговые полы'}]},
+  //-   {link: 'panels.html', title: 'Сендвич панели'},
+  //-   {link: 'materials.html', title: 'Мягкая кровля'},
+  //-   {link: 'proects.html', title: 'Проекты'},
+  //-   {link: 'contacts.html', title: 'Контакты'}
+  //-   ];
+
+section.headerbottom
+  .navbar.navbar-inverse 
+    .container
+      .row
+        .navbar-header
+          button.navbar-toggle(
+            type='button'
+            data-toggle='collapse'
+            data-target='#responsive-menu'
+          )
+            span.sr-only 
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+        .collapse.navbar-collapse#responsive-menu.pad
+          ul.headerbottom__nav
+            each item in navBottom
+              li(class=item.subMenu? 'indicator' : '', data-index= index).headerbottom__navitems
+                if !item.subMenu                
+                  a(href= item.link)= item.title
+                if item.subMenu
+                  span= item.title
+                  ul.headerbottom__subnav
+                    each subitem in item.subMenu
+                      li.headerbottom__subitem
+                        a(href=subitem.links)=subitem.text

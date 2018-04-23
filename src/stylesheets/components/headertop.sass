@@ -1,0 +1,48 @@
+.headertop 
+  border-bottom: 0.5px solid $color-gray-line
+  background: $background-color-light-gray
+  &__list
+    text-align: center
+    margin: 0
+    padding: 0
+  &__nav
+    display: inline-block
+    font-weight: 300
+    font-size: 14px
+    height: 40px
+    line-height: 40px
+    text-align: center
+    padding: 0
+    // @media(max-width: 1200px)
+    //   height: 40px
+    //   line-height: 15px
+    // &:first-child
+    //   padding-right: 38px
+    //   @media(max-width: 1200px)
+    //     text-align: right
+    //     padding-right: 0
+    //   @media(max-width: 991px)
+    //     text-align: center   
+    // &:last-child
+    //   padding-left: 38px
+    //   @media(max-width: 1200px)
+    //     padding-left: 20px
+    //   @media(max-width: 991px)
+    //     padding-left: 0       
+    // @media(max-width: 991px)
+    //   padding: 5px 0   
+    & a 
+      color: $color-dark-gray
+    
+  &__icon
+    padding-right: 5px
+    vertical-align: baseline
+    margin-left: 10px
+    &:first-child
+      margin-left: 0 
+    @media(max-width: 1200px)
+      margin-left: 20px
+    @media(max-width: 991px)
+      margin: 0   
+    @media(max-width: 440px)
+      display: none

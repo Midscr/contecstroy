@@ -1,0 +1,149 @@
+-
+  let navList = [{link:'#', text:'Услуги и цены'},
+  {link:'#', text:'Оборудование'},
+  {link:'#', text:'Наши проекты'},
+  {link:'#', text:'Наши проекты'}];
+-
+  let logoList = ['/img/allen-logo.png',,
+  '/img/pullman-logo.png',
+  '/img/leica-logo.png',
+  '/img/hilti-logo.png',
+  '/img/whiteman-logo.png',
+  '/img/blastrac-logo.png'];
+-
+  let logoList2 = ['/img/ingri-logo.png',
+  '/img/basf-logo.png',
+  '/img/rsl-logo.png',
+  '/img/sika-logo.png',
+  '/img/qtp-logo.png',
+  '/img/turex-logo.png',
+  '/img/universam-logo.png']; 
+
+include ./applicationform   
+
+section.mainmaterials
+  .main__top
+    .main__text
+      .container
+        h1.main__h1 Полимерные полы <в Городе>
+        h2.main__h2 Красивые работающие сайты для бизнеса
+  .container
+    .row
+      .main__twoblocks
+        .main__prev.col-md-6
+          include ./breadcrumbs
+        .main__next.col-md-6
+          ul.main__nav
+            ul.main__nav
+            each item in navList
+              li.main__items
+                a(href=item.link)=item.text
+      .mainmaterials__par.editor
+        p Специалисты компании Контек Строй обладают многолетним опытом, располагают высокотехнологическим оборудованием, необходимым для создания прочного, долговечного покрытия. Мы используем материалы всемирно известных брендов Universum, KleberKraft, Sika, Resuthane. Работа выполняется с применением двухроторных вертолётов Whiteman, нивелиров Hilti, дробеструйных, шлифовальных машин и других профессиональных приспособлений.  
+    .row
+      .mainmaterials__block.col-md-12
+        .mainmaterials__listing.col-md-6
+          .mainmaterials__list Полимерные полы используются при оборудованиях:
+          ul 
+            li.mainmaterials__markeritem
+              img(src='/img/iconmarker.png')
+              span складских помещениях;
+            li.mainmaterials__markeritem
+              img(src='/img/iconmarker.png')
+              span подземных парковках автомобилях;
+            li.mainmaterials__markeritem 
+              img(src='/img/iconmarker.png')
+              span гаражных помещениях;
+            li.mainmaterials__markeritem 
+              img(src='/img/iconmarker.png')
+              span офисах;
+            li.mainmaterials__markeritem
+              img(src='/img/iconmarker.png')
+              span помещениях торгово-выставочных залов;
+            li.mainmaterials__markeritem
+              img(src='/img/iconmarker.png')
+              span  предприятиях пищевой промышленности;
+            li.mainmaterials__markeritem
+              img(src='/img/iconmarker.png')
+              span  лабораториях и медицинских центрах.   
+        .mainmaterials__applicationblock.main__applicationform.col-md-6 
+          +applicationForm()(containerClass='box')
+    .editor.mainmaterials__rates  
+      span Расценки на услуги
+    table.mainmaterials__table.col-xs-12
+      thead
+        tr
+          th.mainmaterials__headers Наименование работ
+          th.mainmaterials__headers Ед. изм.
+          th.mainmaterials__headers Цена (руб.)
+      tbody.mainmaterials__body   
+        tr
+          td.mainmaterials__items Шлифовка бетонного пола
+          td.mainmaterials__items м2
+          td.mainmaterials__items 70 руб.
+        tr  
+          td.mainmaterials__items Обеспыливание промышленным пылесосом
+          td.mainmaterials__items м2
+          td.mainmaterials__items 20 руб.
+        tr  
+          td.mainmaterials__items Нанесение грунтовки (в 1-3 слоя)
+          td.mainmaterials__items м2
+          td.mainmaterials__items 80 руб.
+        tr  
+          td.mainmaterials__items Шпаклевание основания с кварцевым песком и промежуточной шлифовкой
+          td.mainmaterials__items м2
+          td.mainmaterials__items 100 руб.
+        tr  
+          td.mainmaterials__items Нанесение финишного наливного слоя с предварительной шлифовкой и обеспыливанием
+          td.mainmaterials__items м2
+          td.mainmaterials__items 240 руб.
+        tr
+          td.mainmaterials__items Нанесение тонкослойного финишного покрытия
+          td.mainmaterials__items м2
+          td.mainmaterials__items 150 руб.
+    blockquote.main__blockquote.blockquote.col-xs-10
+      p Внимание! Стоимость на услуги может меняться в зависимости от объема и сложности работ
+    .editor.col-xs-12
+      span  Виды промышленных полов
+      p Производственные и административные здания, паркинги, склады, торгово-развлекательные центры, тренажёрные залы и другие помещения с повышенной проходимостью – это далеко не весь перечень объектов, на которых требуется устройство промышленного пола. Существует несколько типов покрытий, каждое из которых отличается своими особенностями.
+    .mainmaterials__images.col-md-6
+      img(src="/img/images1.jpg")
+    .mainmaterials__equipment.col-md-6
+      ul
+        li.mainmaterials__markeritem.padd
+          img(src='/img/iconmarker.png')
+          span Бетонные полы. Это самый экономный вариант. Монтаж промышленного пола из бетонной смеси обойдётся сравнительно недорого. В результате вы получите прочное, устойчивое к любым нагрузкам, долговечное покрытие.
+        li.mainmaterials__markeritem.padd
+          img(src='/img/iconmarker.png')
+          span Бетонные с топпингом. Прочность такого покрытия в 1,5 раза выше обычного бетонного. Для его устройства используется специальная смесь, состоящая из наполнителя, пластификатора и высококачественного цемента. В состав топпинга входит металлическая стружка, корунд. 
+        li.mainmaterials__markeritem.padd
+          img(src='/img/iconmarker.png')
+          span Магнезиальные полы. Очень тонкое, но невероятно прочное покрытие. После монтажа такого пола на поверхности не остаётся швов и стыков. 
+        li.mainmaterials__markeritem.padd
+          img(src='/img/iconmarker.png')
+          span Полимерные полы. Один из наиболее распространённых вариантов. Наливной промышленный пол создаётся при помощи специальных смол. К преимуществам покрытия относят высокую устойчивость к истиранию, долговечность.
+      .editor  
+        p В компании Контек Строй вы можете заказать монтаж промышленных полов с топпингом в <в городе>, а также устройство обычных бетонных, наливных и магнезиальных покрытий. Среди других услуг: монтаж кровли из сэндвич панелей <в Город>, облицовка зданий сэндвич панелями  <в Городе>.           
+      ul.mainmaterials__imgList
+        each item in logoList
+          li.mainmaterials__imgs
+            img(src=item)
+    .mainmaterials__equipment.col-md-6
+      .editor
+        span Промышленные полы: цена, сроки, гарантия качества
+        p Стоимость и сроки устройства промышленного пола зависят от таких факторов: функциональное предназначение помещения, общая площадь, вид покрытия, начальное состояние основания. 
+        P Мы гарантируем высокое качество при устройстве промышленных полов <в городе>, работаем по договору. Менеджеры нашей компании предоставят подробную информацию по интересующим вас вопросам, составят наиболее подходящее коммерческое предложение. Обращайтесь!
+      ul.mainmaterials__imgList2
+        each item in logoList2
+          li.mainmaterials__imgs
+            img(src=item)        
+    .mainmaterials__images.col-md-6
+      img(src="/img/images2.jpg")
+    .row
+      .main__amenities.editor.col-md-12
+        span Отзыв по одному из поектов  
+  .mainmaterials__slider
+    include ./slider
+  .main__applicationform
+    .container
+      +applicationForm()                  

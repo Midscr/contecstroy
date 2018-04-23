@@ -1,0 +1,51 @@
+-
+  let navList = [{link:'#', text:'Услуги и цены'},
+  {link:'#', text:'Оборудование'},
+  {link:'#', text:'Наши проекты'},
+  {link:'#', text:'Наши проекты'}];
+-
+  let proectsList = [{image: '/img/gray-foto.jpg', name: 'Гипермаркеты Леруа Мерлин', work: 'Что делали: Полимерные полы', volume: 'Объем: 35000 кв.м.', text: 'Эпоксидные полмерные полы представляют собой одну из разновидностей полимерных покрытий, предназначенных для защиты бетонного напольного покрытия'},
+  {image: '/img/gray-foto.jpg', name: 'Гипермаркеты Леруа Мерлин', work: 'Что делали: Полимерные полы', volume: 'Объем: 35000 кв.м.', text: 'Эпоксидные полмерные полы представляют собой одну из разновидностей полимерных покрытий, предназначенных для защиты бетонного напольного покрытия'},
+  {image: '/img/gray-foto.jpg', name: 'Гипермаркеты Леруа Мерлин', work: 'Что делали: Полимерные полы', volume: 'Объем: 35000 кв.м.', text: 'Эпоксидные полмерные полы представляют собой одну из разновидностей полимерных покрытий, предназначенных для защиты бетонного напольного покрытия'},
+  {image: '/img/gray-foto.jpg', name: 'Гипермаркеты Леруа Мерлин', work: 'Что делали: Полимерные полы', volume: 'Объем: 35000 кв.м.', text: 'Эпоксидные полмерные полы представляют собой одну из разновидностей полимерных покрытий, предназначенных для защиты бетонного напольного покрытия'},
+  {image: '/img/gray-foto.jpg', name: 'Гипермаркеты Леруа Мерлин', work: 'Что делали: Полимерные полы', volume: 'Объем: 35000 кв.м.', text: 'Эпоксидные полмерные полы представляют собой одну из разновидностей полимерных покрытий, предназначенных для защиты бетонного напольного покрытия'}];
+
+include ./applicationform 
+
+section.mainproects
+  .main__top
+    .main__text
+      .container
+        h1.main__h1 Пректы компании Контекстрой
+        h2.main__h2 Строительная компания Контекстрой
+  .container
+    .row
+      .main__twoblocks
+        .main__prev
+          include ./breadcrumbs
+      .editor.mainproects__par
+        span В этом разделе Вы можете ознакомиться с выполненными нами проектами
+      .mainproects__form
+        +applicationForm()(containerClass='bg-white') 
+      ul.col-xs-12.mainproects__list
+        each item in proectsList
+          li.mainproects__items.col-xs-12
+            img.mainproects__img.col-md-4.col-sm-6(src=item.image)
+            .mainproects__text.col-md-8.col-sm-6
+              p.mainproects__heading=item.name
+              p=item.work
+              p=item.volume
+              p=item.text
+              a(href='/portfolio').mainproects__btn.btn ПОДРОБНЕЕ  
+    .mainproects__buttons.text-inline.col-md-12
+      a(href='#').mainproects__button.btn 1
+      a(href='#').mainproects__button.btn 2
+      a(href='#').mainproects__button.btn 3
+      a(href='#').mainproects__button.btn 4
+      a(href='#').mainproects__button.btn 5
+      a(href='#').mainproects__button.btn 6
+      a(href='#').mainproects__button.btn 7
+      a(href='#').mainproects__button.btn 8                                                  
+  .main__applicationform
+    .container
+      +applicationForm()

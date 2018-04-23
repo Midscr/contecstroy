@@ -1,0 +1,50 @@
+-
+  let footerList = [
+    {main: {text:"Главная категория", link: "#"}, additional: [{text: "Внутренняя категория", link: "#"},{text: "Внутренняя категория", link: "#"},{text: "Внутренняя категория", link: "#"},{text: "Внутренняя категория", link: "#"}]},
+    {main: {text:"Главная категория", link: "#"}, additional: [{text: "Внутренняя категория", link: "#"},{text: "Внутренняя категория", link: "#"},{text: "Внутренняя категория", link: "#"},{text: "Внутренняя категория", link: "#"}]},
+    {main: {text:"Контакты", link: "#"}, additional: [{text: "Доставка", link: "#"},{text: "Оплата", link: "#"},{text: "О компании", link: "#"},{text: "Гарантии на услуги", link: "#"}]}
+  ];
+-
+  let numberCall = ["8(495) 300-00-00", "8(804) 333-70-60", "Звонок по России бесплатный"];
+
+-
+  let pickupList = [{text: "Пункты самовывоза в Ставрполе", link: "#"},
+  {text: "Доехать на личном транспорте", link: "#"},
+  {text: "На общественном транспорте", link: "#"},
+  {text: "Дойти пешком", link: "#"}];
+-
+  let paymentmethodList = [{image: "/img/visa.png"},
+  {image: "/img/mastercard.png"},
+  {image: "/img/Tinkoff.png"},
+  {image:"/img/sberbank.png"}, 
+  {image:"/img/yandex.png"}];
+
+footer.footerprev
+  .container
+    .row
+      .col-md-6.col-sm-8
+        each item in footerList
+          ul.footerprev__list
+            li.footerprev__item
+              a(href=item.main.link)=item.main.text
+            each add in item.additional
+              li.footerprev__items
+                a(href=add.link)=add.text      
+      .col-md-6.col-sm-4.col-xs-12
+        .row  
+          .col-md-5.col-md-offset-1.text-right.col-xs-12
+            ul.footerprev__numberslist
+              each item in numberCall
+                li.footerprev__numbers=item
+          .col-md-6.col-xs-12
+            ul.footerprev__pickupList
+              each item in pickupList
+                li.footerprev__pickupitem
+                  a(href=item.link)=item.text
+    ul.footerprev__paymentmethod Способ оплаты:
+      each item in paymentmethodList
+        li.footerprev__payitem
+          img(src=item.image)
+    .footerprev__details-link
+      a.footerprev__details(href="#") Подробнее об оплате
+            

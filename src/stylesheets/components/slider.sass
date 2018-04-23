@@ -1,0 +1,91 @@
+.slider
+  max-width: 1030px
+  margin: 0 auto
+  position: relative
+  margin-bottom: 20px
+  @media(max-width: 1050px)
+    max-width: 800px
+  @media(max-width: 850px)
+    max-width: 600px
+  @media(max-width: 700px)
+    max-width: 250px   
+  &__frame
+    overflow: hidden
+    border-radius: 3px
+    border-color: $background-card-color
+    box-shadow: 0px 5px 24px 0px rgba(0, 0, 0, 0.07)
+    background-color: $background-card-color
+  &__list
+    position: relative
+    left: 0
+    width: 99999999px
+    margin: 0
+    transition: left .5s ease
+
+  &__img  
+  &__item
+    display: inline-block
+  &__right, &__left
+    display: inline-block
+    vertical-align: middle
+    padding-left: 15px 
+  &__left
+    width: 35%
+    @media(max-width: 1050px)
+      width: 25%
+      vertical-align: top
+    @media(max-width: 710px)
+      display: none  
+  &__right
+    width: 65%
+    padding-left: 35px
+    font-weight: 300
+    color: $color-dark-gray
+    font-size: 16px
+    & p 
+      margin: 0
+    @media(max-width: 1050px)
+      width: 50%
+      padding-left: 10px
+    @media(max-width: 700px)
+      width: 100% 
+  &__comment
+    min-height: 165px
+    font-weight: 300
+    font-style: italic
+    color: $color-dark-gray
+    font-size: 16px
+    padding-top: 10px
+  &__prev, &__next
+    width: 17px
+    height: 70px
+    position: absolute
+    top: 40%
+    cursor: pointer
+    background-repeat: no-repeat
+  &__prev
+    background-image: url(/img/buttonprev.png)
+    transform: translateX(-30px)
+    left: 0
+  &__next
+    background-image: url(/img/buttonnext.png)
+    transform: translateX(30px)
+    right: 0
+  &__indicator-list
+    text-align: center
+    padding-top: 10px
+  &__indicator
+    cursor: pointer
+    text-align: center
+    border-radius: 50%
+    width: 13px
+    height: 13px
+    display: inline-block
+    margin-right: 7px
+    background-color: $color-dark-gray
+    &:last-child
+      margin-right: 0
+    &.active
+      background-color: $color-red  
+ 
+

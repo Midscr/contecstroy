@@ -1,0 +1,83 @@
+-
+  let navList = [{link:'#', text:'Услуги и цены'},
+  {link:'#', text:'Оборудование'},
+  {link:'#', text:'Наши проекты'},
+  {link:'#', text:'Наши проекты'}];
+
+include ./applicationform   
+
+section.mainmaterials
+  .main__top
+    .main__text
+      .container
+        h1.main__h1=  materialsInfo.title.title
+        h2.main__h2=  materialsInfo.title.subTitle
+  .container
+    .row
+      .main__twoblocks
+        .main__prev.col-md-6
+          include ./breadcrumbs
+        .main__next.col-md-6
+          ul.main__nav
+            ul.main__nav
+            each item in navList
+              li.main__items
+                a(href=item.link)=item.text
+      .mainmaterials__par.editor
+        p=  materialsInfo.title.text
+      
+    .row
+      .mainmaterials__block.col-md-12
+        .mainmaterials__listing.col-md-6
+          .mainmaterials__list= materialsInfo.formBlock.title
+          ul
+            each item in materialsInfo.formBlock.list
+              li.mainmaterials__markeritem
+                img(src='/img/iconmarker.png')
+                span= item
+        .mainmaterials__applicationblock.main__applicationform.col-md-6 
+          +applicationForm()(containerClass='box')
+    .editor.mainmaterials__rates  
+      span Расценки на услуги
+    table.mainmaterials__table.col-xs-12
+      thead
+        tr
+          th.mainmaterials__headers Наименование работ
+          th.mainmaterials__headers Ед. изм.
+          th.mainmaterials__headers Цена (руб.)
+      tbody.mainmaterials__body
+        each item in materialsInfo.price
+          tr
+            td.mainmaterials__items= item.name
+            td.mainmaterials__items= item.unit
+            td.mainmaterials__items= item.cost
+    blockquote.main__blockquote.blockquote.col-xs-10
+      p= materialsInfo.alert
+    .mainmaterials__images.col-md-6
+      img(src=materialsInfo.textBlock1.img)
+    .mainmaterials__equipment.col-md-6
+      .editor
+        span= materialsInfo.textBlock1.title
+        div!= materialsInfo.textBlock1.text
+      ul.mainmaterials__imgList
+        each item in materialsInfo.textBlock1.logoImg
+          li.mainmaterials__imgs
+            img(src=item)
+    .mainmaterials__equipment.col-md-6
+      .editor
+        span= materialsInfo.textBlock2.title
+        div!= materialsInfo.textBlock2.text
+      ul.mainmaterials__imgList2
+        each item in materialsInfo.textBlock2.logoImg
+          li.mainmaterials__imgs
+            img(src=item)        
+    .mainmaterials__images.col-md-6
+      img(src=materialsInfo.textBlock2.img)
+    .row
+      .main__amenities.editor.col-md-12
+        span Отзыв по одному из поектов  
+  .mainmaterials__slider
+    include ./slider
+  .main__applicationform
+    .container
+      +applicationForm()                  

@@ -1,0 +1,22 @@
+mixin applicationForm(type)
+  section.form(class!=attributes.containerClass)
+    .form__main
+      h3.form__h3 Нужна Консультация? Оставьте заявку и в течении 2 минут наш менеджер с Вами свяжется!
+      form.form__container
+        input.form__input.name(
+          type="text"
+          placeholder="Ваше имя"
+          )
+        input.form__input.number(
+          type="text"
+          placeholder="Ваш номер"
+          data-inputmask="'mask': '+7(999) 999-9999'"
+        )
+        button.form__btn.btn(
+          disabled="disabled") ОСТАВИТЬ ЗАЯВКУ    
+      label
+        input.form__checkbox(
+          type="checkbox"
+          )
+        span.form__checkbox-custom
+      span.form__label Даю согласие на обработку персональных данных

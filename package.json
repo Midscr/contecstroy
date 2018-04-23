@@ -1,0 +1,41 @@
+{
+  "name": "miranix",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "gulp": "gulp"
+  },
+  "dependencies": {
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.15.5",
+    "jquery": "^3.2.1",
+    "morgan": "~1.9.0",
+    "mysql": "^2.15.0",
+    "nodemailer": "^4.4.1",
+    "pug": "2.0.0-beta11",
+    "reset-css": "^2.2.1",
+    "serve-favicon": "~2.4.5",
+    "smooth-scroll": "^12.1.5",
+    "sms_ru": "0.0.1",
+    "vex-js": "^4.0.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.21.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-imagemin": "^4.0.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.2",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "imagemin-pngquant": "^5.0.1",
+    "rimraf": "^2.6.2",
+    "uglify-es": "^3.3.9"
+  }
+}

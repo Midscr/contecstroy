@@ -1,0 +1,78 @@
+.headerbottom
+  font-weight: 300
+  font-size: 18px
+  
+  @media(max-width: 991px)
+    font-size: 16px
+  @media(max-width: 991px)
+    font-size: 18px 
+  &__nav
+    margin: 0
+    min-height: 0
+    text-align: center
+  &__navitems
+    display: inline-block
+    position: relative
+    &:hover .headerbottom__subnav
+      opacity: 1
+      left: 0    
+    @media(max-width: 767px)
+      display: block
+      text-align: left
+    & a, & span
+      display: block
+      text-decoration: none
+      padding: 10px 39px !important
+      color: $color-text-light-gray
+      @media(max-width: 1200px)
+        padding: 10px 20px !important
+      @media(max-width: 991px)
+        padding: 10px 7px !important
+        display: block  
+    &:hover
+      background-color: $color-hover-gray
+  &__subnav
+    position: absolute
+    min-width: 100%
+    left: -99999999em
+    top: 100%
+    transition: .5s opacity
+    opacity: 0
+    z-index: 1
+    @media(max-width: 767px)
+      position: static
+      overflow: hidden
+      opacity: 1
+      margin: 0
+  &__subitem
+    position: relative
+    transition: .5s opacity
+    background-color: $color-dark-gray
+    &:hover
+      background-color: $color-hover-gray
+    @media(max-width: 767px)
+      padding-left: 30px
+.indicator
+  cursor: pointer
+  @media(max-width: 767px)
+    &:after
+      content: "+"
+      position: absolute
+      font-size: 23px
+      color: $color-text-light-gray 
+      width: 30px
+      text-align: left
+      top: 5px
+      right: 0
+      background: transparent
+      cursor: pointer
+    & a:only-child:after
+      content: ""       
+.navbar
+  margin: 0
+  border: 0
+  border-radius: 0
+  min-height: 0
+  background-color: $color-dark-gray
+.pad
+  padding: 0      

@@ -1,0 +1,75 @@
+.card
+  &__img
+    width: 100%
+    height: 135px
+    background-size: cover
+    background-repeat: no-repeat
+    border-radius: 8px 8px 0 0
+  &__blocks
+    padding: 20px
+ 
+  &__items
+    border-radius: 8px 8px 0 0
+    box-shadow: 0px 5px 24px 0px rgba(0, 0, 0, 0.07)
+    text-align: left
+    background-color: $background-card-color
+    position: relative
+    vertical-align: top
+    max-width: 270px
+    padding: 0
+    margin: 0 auto 
+    @media(max-width: 991px)
+      margin: 20px auto
+  &__start
+    font-weight: 700
+    font-size: 20px
+    color: $color-dark-gray
+  &__circle
+    position: relative
+    font-weight: 300
+    font-size: 16px
+    color: $color-dark-gray
+    list-style: none
+    padding-left: 15px
+    &:before
+      content: " "
+      position: absolute
+      border-radius: 50px 
+      background: $color-red
+      width: 4px
+      height: 4px
+      top: 50%
+      left: 0
+  &__recommendations
+    color: $color-red
+    font-size: 16px
+    font-style: italic
+    text-align: left
+    & a
+      color: $color-red
+      border-bottom: 1px solid $color-red
+      text-decoration: none
+    &:hover
+      color: $color-red
+  &__price
+    color: $color-dark-gray
+    font-weight: 300
+    font-size: 16px
+    padding-top: 10px
+    & p 
+      margin: 0
+  &__block
+    padding: 12px 0
+  &__block2
+    margin: 60px 0
+  &__btn
+    position: absolute
+    bottom: 2%
+    @media(max-width: 1200px)
+      padding: 5px 8px
+      font-size: 12px
+    @media(max-width: 991px)
+      padding: 10px
+      font-size: 16px    
+      
+

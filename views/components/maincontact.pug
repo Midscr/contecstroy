@@ -1,0 +1,111 @@
+-
+  let navList = [{link:'#', text:'Услуги и цены'},
+  {link:'#', text:'Оборудование'},
+  {link:'#', text:'Наши проекты'},
+  {link:'#', text:'Наши проекты'}];
+
+main.maincontact
+  .main__top
+    .main__text
+      .container
+        h1.main__h1= contactInfo.title.title
+        h2.main__h2= contactInfo.title.subTitle
+  .container
+    .row
+      .main__twoblocks
+        .main__prev.col-md-6
+          include ./breadcrumbs
+        .main__next.col-md-6
+          ul.main__nav
+            each item in navList
+              li.main__items
+                a(href=item.link)=item.text
+      .editor.text-center.maincontact__company
+        span= 'Компания ' + contactInfo.company.name + ' ' + city.prepositionalCity  
+      .maincontact__table1.col-md-6.col-xs-12
+        .editor
+          span Юридические реквизиты
+        table.maincontact__table
+          thead
+            tr
+              each item in contactInfo.company.legal[0]
+                th.maincontact__headers= item
+          tbody.maincontact__body
+            each val, index in contactInfo.company.legal
+              if index>0
+                tr
+                  each item in val
+                    td.maincontact__items= item
+      .maincontact__table2.col-md-6.col-xs-12
+        .editor
+          span Как с нами связаться
+        table.maincontact__table.col-xs-12
+          thead
+            tr
+              th.maincontact__headers Телефон
+              th.maincontact__headers= contactInfo.company.tel
+          tbody.maincontact__body   
+            tr
+              td.maincontact__items E-mail
+              td.maincontact__items= contactInfo.company.email
+            tr
+              td.maincontact__items Факс
+              td.maincontact__items= contactInfo.company.fax || 'По запросу'
+            each item in contactInfo.company.messengers
+              if item.name === 'Whatsapp'
+                tr
+                  td.maincontact__items= item.name
+                  td.maincontact__items
+                    a.maincontact__whatsapp Можно писать сюда     
+                    img(src=item.img)
+              else
+                tr
+                  td.maincontact__items= item.name
+                  td.maincontact__items= item.link
+            each item in contactInfo.company.socials
+              tr
+                td.maincontact__items= item.name
+                td.maincontact__items= item.link
+    .maincontact__about.col-md-12
+      .editor
+        span= contactInfo.text.title
+        .div!= contactInfo.text.text
+      .maincontact__cards
+        include ./cards
+      .editor.maincontact__popular
+        span Популярные услуги
+    .table
+      table.maincontact__table
+        thead
+          tr
+            th.maincontact__headers Промышленные полы
+            th.maincontact__headers Облицовка сендвич панелями
+            th.maincontact__headers Информационные стенды
+        tbody.maincontact__body   
+          tr
+            td.maincontact__items Полимерные полы
+            td.maincontact__items Уличные экраны
+            td.maincontact__items Стенды охрана труда
+          tr
+            td.maincontact__items Полированный бетон
+            td.maincontact__items Светодиодные часы
+            td.maincontact__items Стенды для школы
+          tr
+            td.maincontact__items
+            td.maincontact__items
+            td.maincontact__items
+          tr
+            td.maincontact__items
+            td.maincontact__items
+            td.maincontact__items 
+          tr
+            td.maincontact__items
+            td.maincontact__items
+            td.maincontact__items 
+          tr
+            td.maincontact__items
+            td.maincontact__items
+            td.maincontact__items
+  .main__applicationform
+    .container
+      include ./applicationform

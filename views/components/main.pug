@@ -1,0 +1,58 @@
+include ./applicationform 
+
+
+main.main
+  .main__top
+    .main__text
+      .container
+        .row
+          h1.main__h1= infoMain.title.title
+          h2.main__h2= infoMain.title.subTitle
+  .container
+    .row
+      .main__twoblocks
+        .main__prev.col-md-6.col-sm-4.col-xs-12
+          include ./breadcrumbs
+        .main__next.col-md-6.col-sm-8.col-xs-12
+          ul.main__nav
+            each item in navList
+              li.main__items
+                a(href=item.link)=item.text
+      .main__paragraph.editor
+        p= infoMain.title.text
+      .main__amenities.editor
+        span= infoMain.app.title
+      .main__cards
+        .main__card
+            include ./card
+      .main__amenities.editor
+        span= infoMain.text1.title
+      .main__paragraph.editor
+        p= infoMain.text1.text
+      blockquote.main__blockquote.blockquote
+        p= infoMain.text1.subText
+    .main__action
+      .row
+        .main__heading.col-md-4.col-sm-12
+          .main__list= infoMain.text2.title
+          ul
+            each item in infoMain.text2.list
+              li.main__markeritem
+                img(src='/img/iconmarker.png')
+                span= item
+          a(href="#").main__btn.btn РАССЧЕТ СТОИМОСТИ    
+        .main__bgimage.col-md-8.col-sm-12
+        a(href=infoMain.promo.link).main__btn.btn.main__bigbtn.col-xs-12= infoMain.promo.name
+      .main__amenities.editor
+        span= infoMain.text3.title
+      .main__paragraph.editor
+        p=infoMain.text3.text
+      blockquote.main__blockquote.blockquote
+        p=infoMain.text3.subText
+    .main__amenities.editor
+      span Отзыв по одному из поектов
+    include ./slider
+  .main__applicationform
+    .container
+      +applicationForm() 
+                

@@ -1,0 +1,29 @@
+section.headercenter
+  .container
+    .row
+      .headercenter__logo.col-md-3
+        img(src=contactInfo.company.logo)
+      .col-md-9.col-sm-12
+        .row
+          ul.headercenter__list.headercenter__messege.col-md-4.col-xs-6
+            li.headercenter__social
+              span.headercenter__mess Мессенджеры
+              .headercenter__icons
+                each item in contactInfo.company.messengers
+                  a.headercenter__iconstg(href=item.link style= "background-image: url("+item.img+")")
+            li.headercenter__social
+              span.headercenter__mess Мы в соц. сетях
+              .headercenter__icons
+                each item in contactInfo.company.socials
+                  a.headercenter__iconsvk(href=item.link style= "background-image: url("+item.img+")")
+          .headercenter__list.headercenter__times.col-md-2.col-xs-6
+            p Время работы:
+            p= contactInfo.company.workTime
+            p= 'Выходной - ' + contactInfo.company.weekend
+          .headercenter__list.headercenter__phones.col-md-3.col-xs-6
+            p= 'Тел.: ' + contactInfo.company.tel
+            p= contactInfo.company.fax
+            p.headercenter__call Звонок по России бесплатный
+          .headercenter__list.headercenter__top.col-md-3.col-xs-6
+            p= 'E-mail: ' + contactInfo.company.email
+            span.headercenter__callblue.js-callback Заказать обратный звонок     

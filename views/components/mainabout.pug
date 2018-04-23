@@ -1,0 +1,94 @@
+-
+  let navList = [{link:'#', text:'Услуги и цены'},
+  {link:'#', text:'Оборудование'},
+  {link:'#', text:'Наши проекты'},
+  {link:'#', text:'Наши проекты'}];
+-
+  let clientsList = ['/img/energomera-logo.png', '/img/leroy-merlin-logo.png', '/img/magnit-logo.png', '/img/marriott-logo.png', '/img/master-logo.png', '/img/russia-logo.png',
+  '/img/lovechok-logo.png', '/img/derways-logo.png', '/img/evrohim-logo.png', '/img/sbk-logo.png', '/img/schlumberger-logo.png', '/img/jako-logo.png', '/img/arms-logo.png',
+  '/img/russian-federation-logo.png', '/img/achaluki-logo.png', '/img/spetsstroy-logo.png', '/img/arnest-logo.png', '/img/chokoland-logo.png'];
+-
+  let logoList = ['/img/allen-logo.png',
+  '/img/pullman-logo.png',
+  '/img/leica-logo.png',
+  '/img/hilti-logo.png',
+  '/img/whiteman-logo.png',
+  '/img/blastrac-logo.png'];
+-
+  let logoList2 = ['/img/ingri-logo.png',
+  '/img/BASF-logo.png',
+  '/img/rsl-logo.png',
+  '/img/sika-logo.png',
+  '/img/qtp-logo.png',
+  '/img/turex-logo.png',
+  '/img/universam-logo.png'];  
+
+include ./applicationform
+
+main.mainabout
+  .main__top
+    .main__text
+      .container
+        h1.main__h1= aboutInfo.title.title
+        h2.main__h2= aboutInfo.title.subTitle
+  .container
+    .row
+      .main__twoblocks
+        .main__prev.col-md-6
+          include ./breadcrumbs
+        .main__next.col-md-6
+          ul.main__nav
+            each item in navList
+              li.main__items
+                a(href=item.link)=item.text
+      .editor.mainabout__keyspecialists
+        span= aboutInfo.content.title
+      .mainabout__cards
+        include ./cards
+      .mainabout__linkspecialists
+        a(href=aboutInfo.content.specialist.link)= aboutInfo.content.specialist.text
+      blockquote.main__blockquote.blockquote
+        p= aboutInfo.content.specialist.blockquote
+      .editor.mainabout__keyspecialists
+        span= aboutInfo.content.title2
+      ul.mainabout__list.col-xs-12
+        each item in aboutInfo.content.clientsList
+          li.mainabout__items.col-md-2.col-sm-4.col-xs-12
+            img(src=item)
+      .col-md-6
+        .editor.mainabout__keyspecialists
+          span= aboutInfo.content.title3
+          div!= aboutInfo.content.text3
+        ul
+          each item in aboutInfo.content.list3
+            li.mainabout__textitem 
+              img(src='/img/iconmarker.png')
+              span= item
+      .col-md-6
+        img.mainabout__image(src=aboutInfo.content.img3)
+    .editor
+      div!= aboutInfo.content.text3_1
+      .editor.mainabout__keyspecialists
+        span= aboutInfo.content.title4
+      ul.col-xs-12
+        each item in aboutInfo.content.logoList
+          li.col-md-2.mainabout__items.col-sm-6.col-xs-12
+            img(src=item)
+      .col-md-6
+        img.mainabout__image(src=aboutInfo.content.img4)
+      .col-md-6
+        .editor.mainabout__keyspecialists
+          span= aboutInfo.content.title5
+          div!= aboutInfo.content.text5
+      .editor.mainabout__keyspecialists.col-xs-12
+        span= aboutInfo.content.title4
+    ul.list-inline.col-xs-12
+      each item in aboutInfo.content.logoList2
+        li.mainabout__items.mainabout__items2
+          img(src=item)
+    .editor.mainabout__comment.mainabout__keyspecialists.col-xs-12
+      span Отзыв по одному из проектов
+  include ./slider
+  .main__applicationform
+    .container
+      +applicationForm()

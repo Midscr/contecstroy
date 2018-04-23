@@ -1,0 +1,51 @@
+.maincontact
+  background-color: $background-color-light-gray
+  &__table
+    border: 1px solid $color-gray-line
+    width: 100%
+    margin-top: 30px
+    & tr:nth-child(even)
+      background-color: $color-white
+    & tr:nth-child(odd)
+      background-color: $background-color-light-gray
+    @media(max-width: 992px)
+      overflow: hidden    
+  &__company
+    padding: 50px 0
+    @media(max-width: 991px)
+      padding: 10px 0
+  &__headers
+    background-color: $color-gray-table
+    padding: 2px 22px
+    @media(max-width: 991px)
+      padding: 2px 10px
+    @media(max-width: 405px)
+      padding: 0  
+  &__items
+   padding: 5px 5px
+  &__headers, &__items
+    font-weight: 300
+    color: $color-dark-gray
+    font-size: 18px
+    border-right: 1px solid $color-gray-line
+    @media(max-width: 405px)
+      font-size: 14px
+  &__about
+    @media(max-width: 991px)
+      text-align: center
+      padding-bottom: 10px  
+  &__popular
+    padding: 35px 0
+    @media(max-width: 991px)
+      padding: 10px 0
+  &__whatsapp
+    color: $color-blue
+    cursor: pointer
+    &:hover
+      color: $color-blue
+  &__cards
+    padding-top: 30px    
+.table 
+  @media(max-width: 992px)
+    overflow-x: scroll
+
