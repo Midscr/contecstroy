@@ -6,6 +6,14 @@ const infoMain = require('../components/main');
 const infoContact = require('../components/contact');
 const infoMaterials = require('../components/materials');
 const infoAbout = require('../components/aboutcompany');
+const infoProjects = require('../components/projectList');
+const projects = require('../components/projects/data');
+const floors = require('../components/dataFloors');
+const floorsList = require('../components/floorsList');
+const panels = require('../components/dataPanels');
+const panelsList = require('../components/PanelsList');
+const roofs = require('../components/dataRoofs');
+const roofsList = require('../components/RoofsList');
 
 let emptyCity = {
   population: 1000000,
@@ -25,12 +33,24 @@ function initPagesRoutes(app) {
     const cities = data[0];
     const deliveryAddresses = data[1];
     // const domain = 'localhost:4400';
-    const domain = '46.36.218.230:4400';
+    const domain = 'contecstroy.ru';
     const fromEmail = 'rb@ray-bit.ru';
     const toEmail = 'rb@ray-bit.ru';
 
     pages.forEach(page => {
       app.get(page.route, routeHandler(page));
+    });
+    projects.forEach(project => {
+      app.get('/proects/' + project.seoUrl, projectPage(project));
+    });
+    floorsList.forEach(floor => {
+      app.get(floor.links, infoPage(floor, floors));
+    });
+    roofsList.forEach(roof => {
+      app.get(roof.links, infoPage(roof, roofs));
+    });
+    panelsList.forEach(panel => {
+      app.get(panel.links, infoPage(panel, panels));
     });
 
     //POST
@@ -158,7 +178,8 @@ function initPagesRoutes(app) {
             infoMain: infoMain(city || noCity),
             contactInfo: infoContact(city || noCity),
             materialsInfo: infoMaterials(city || noCity),
-            aboutInfo: infoAbout(city || noCity)
+            aboutInfo: infoAbout(city || noCity),
+            projectsInfo: infoProjects(city || noCity)
           });
         } else {
           address = deliveryAddresses.filter(item => item.city.toLowerCase() === noCity.city.toLowerCase());
@@ -176,6 +197,125 @@ function initPagesRoutes(app) {
             navTop: nav.navTop,
             navBottom: nav.navBottom,
             pPrice: opts.pPrice,
+            navList: nav.navAnchor,
+            infoMain: infoMain(noCity),
+            contactInfo: infoContact(noCity),
+            materialsInfo: infoMaterials(noCity),
+            aboutInfo: infoAbout(noCity),
+            projectsInfo: infoProjects(noCity)
+          });
+        }
+      };
+    }
+    function projectPage(project) {
+      return (req, res, next) => {
+        let cityDomainName = req.hostname.replace(/\..*/, '');
+        let city = cities.filter(item => item.cityEn.toLowerCase() === cityDomainName)[0];
+        let noCity = cities.filter(item => item.cityEn.toLowerCase() === 'stavropol')[0];
+        emptyCity.postAddress = noCity.postAddress;
+
+        if (!city && req.headers.host != domain) {
+          let err = new Error('Not Found');
+          err.status = 404;
+          next(err);
+        } else if (city) {
+          address = deliveryAddresses.filter(item => item.city.toLowerCase() === city.city.toLowerCase());
+          res.render('portfolio.pug', {
+            city: city || noCity,
+            cities: cities,
+            domain: cityDomainName + '.' + domain,
+            title: project.name,
+            date: project.date,
+            address: project.address,
+            material: project.material,
+            sqare: project.sqare,
+            text: project.text,
+            thumb: project.thumb,
+            img: project.img,
+            seoUrl: project.seoUrl,
+            navTop: nav.navTop,
+            navBottom: nav.navBottom,
+            navList: nav.navAnchor,
+            infoMain: infoMain(city || noCity),
+            contactInfo: infoContact(city || noCity),
+            materialsInfo: infoMaterials(city || noCity),
+            aboutInfo: infoAbout(city || noCity),
+            projectsInfo: infoProjects(city || noCity)
+          });
+        } else {
+          address = deliveryAddresses.filter(item => item.city.toLowerCase() === noCity.city.toLowerCase());
+          res.render('portfolio.pug', {
+            title: 'Home',
+            city: noCity,
+            cities: cities,
+            address: address,
+            domain: domain,
+            title: project.name,
+            date: project.date,
+            address: project.address,
+            material: project.material,
+            sqare: project.sqare,
+            text: project.text,
+            thumb: project.thumb,
+            img: project.img,
+            seoUrl: project.seoUrl,
+            navTop: nav.navTop,
+            navBottom: nav.navBottom,
+            navList: nav.navAnchor,
+            infoMain: infoMain(noCity),
+            contactInfo: infoContact(noCity),
+            materialsInfo: infoMaterials(noCity),
+            aboutInfo: infoAbout(noCity),
+            projectsInfo: infoProjects(noCity)
+          });
+        }
+      };
+    }
+    function infoPage(page, pageList) {
+      return (req, res, next) => {
+        let cityDomainName = req.hostname.replace(/\..*/, '');
+        let city = cities.filter(item => item.cityEn.toLowerCase() === cityDomainName)[0];
+        let noCity = cities.filter(item => item.cityEn.toLowerCase() === 'stavropol')[0];
+        emptyCity.postAddress = noCity.postAddress;
+
+        if (!city && req.headers.host != domain) {
+          let err = new Error('Not Found');
+          err.status = 404;
+          next(err);
+        } else if (city) {
+          address = deliveryAddresses.filter(item => item.city.toLowerCase() === city.city.toLowerCase());
+          let pageItem = pageList(city).find(item => item.name === page.name);
+          res.render('industrial.pug', {
+            city: city,
+            cities: cities,
+            domain: cityDomainName + '.' + domain,
+            title: pageItem.title,
+            name: pageItem.name,
+            imagePath: pageItem.imagePath,
+            content: pageItem.content,
+            navTop: nav.navTop,
+            navBottom: nav.navBottom,
+            navList: nav.navAnchor,
+            infoMain: infoMain(city),
+            contactInfo: infoContact(city),
+            materialsInfo: infoMaterials(city),
+            aboutInfo: infoAbout(city)
+          });
+        } else {
+          address = deliveryAddresses.filter(item => item.city.toLowerCase() === noCity.city.toLowerCase());
+          let pageItem = pageList(noCity).find(item => item.name === page.name);
+          res.render('industrial.pug', {
+            title: 'Home',
+            city: noCity,
+            cities: cities,
+            address: address,
+            domain: domain,
+            title: pageItem.title,
+            name: pageItem.name,
+            imagePath: pageItem.imagePath,
+            content: pageItem.content,
+            navTop: nav.navTop,
+            navBottom: nav.navBottom,
             navList: nav.navAnchor,
             infoMain: infoMain(noCity),
             contactInfo: infoContact(noCity),

@@ -42,7 +42,7 @@ main.mainabout
               li.main__items
                 a(href=item.link)=item.text
       .editor.mainabout__keyspecialists
-        span= aboutInfo.content.title
+        h2= aboutInfo.content.title
       .mainabout__cards
         include ./cards
       .mainabout__linkspecialists
@@ -50,14 +50,14 @@ main.mainabout
       blockquote.main__blockquote.blockquote
         p= aboutInfo.content.specialist.blockquote
       .editor.mainabout__keyspecialists
-        span= aboutInfo.content.title2
+        h2= aboutInfo.content.title2
       ul.mainabout__list.col-xs-12
         each item in aboutInfo.content.clientsList
           li.mainabout__items.col-md-2.col-sm-4.col-xs-12
             img(src=item)
       .col-md-6
         .editor.mainabout__keyspecialists
-          span= aboutInfo.content.title3
+          h2= aboutInfo.content.title3
           div!= aboutInfo.content.text3
         ul
           each item in aboutInfo.content.list3
@@ -69,8 +69,8 @@ main.mainabout
     .editor
       div!= aboutInfo.content.text3_1
       .editor.mainabout__keyspecialists
-        span= aboutInfo.content.title4
-      ul.col-xs-12
+        h2= aboutInfo.content.title4
+      ul.col-xs-12.mainabout__keyspecialists_list
         each item in aboutInfo.content.logoList
           li.col-md-2.mainabout__items.col-sm-6.col-xs-12
             img(src=item)
@@ -78,10 +78,10 @@ main.mainabout
         img.mainabout__image(src=aboutInfo.content.img4)
       .col-md-6
         .editor.mainabout__keyspecialists
-          span= aboutInfo.content.title5
+          h2= aboutInfo.content.title5
           div!= aboutInfo.content.text5
       .editor.mainabout__keyspecialists.col-xs-12
-        span= aboutInfo.content.title4
+        h2= aboutInfo.content.title4
     ul.list-inline.col-xs-12
       each item in aboutInfo.content.logoList2
         li.mainabout__items.mainabout__items2

@@ -5,7 +5,7 @@ module.exports = function(city) {
       subTitle: 'Профессионально выполним устройство промышленных полов ' + city.prepositionalCity
     },
     company: {
-      name: 'ООО КонтекСтрой',
+      name: 'ООО "КонтекСтрой"',
       logo: '/img/logo.jpg',
       workTime: 'Пн-Сб: 07:00-21:00',
       weekend: 'Вс',

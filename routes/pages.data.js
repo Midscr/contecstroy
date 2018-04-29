@@ -45,7 +45,7 @@ module.exports = [
     pPrice: '9000'
   },
   {
-    route: '/industrial',
+    route: '/industrial-floors',
     indexLink: 'industrial.pug',
     pageName: 'Полимерные полы',
     pName: 'Полимерные полы',

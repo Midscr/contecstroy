@@ -21,10 +21,10 @@ main.maincontact
               li.main__items
                 a(href=item.link)=item.text
       .editor.text-center.maincontact__company
-        span= 'Компания ' + contactInfo.company.name + ' ' + city.prepositionalCity  
+        h2= 'Компания ' + contactInfo.company.name + ' ' + city.prepositionalCity  
       .maincontact__table1.col-md-6.col-xs-12
         .editor
-          span Юридические реквизиты
+          h2 Юридические реквизиты
         table.maincontact__table
           thead
             tr
@@ -38,7 +38,7 @@ main.maincontact
                     td.maincontact__items= item
       .maincontact__table2.col-md-6.col-xs-12
         .editor
-          span Как с нами связаться
+          h2 Как с нами связаться
         table.maincontact__table.col-xs-12
           thead
             tr
@@ -68,12 +68,12 @@ main.maincontact
                 td.maincontact__items= item.link
     .maincontact__about.col-md-12
       .editor
-        span= contactInfo.text.title
+        h2= contactInfo.text.title
         .div!= contactInfo.text.text
       .maincontact__cards
         include ./cards
       .editor.maincontact__popular
-        span Популярные услуги
+        h2 Популярные услуги
     .table
       table.maincontact__table
         thead

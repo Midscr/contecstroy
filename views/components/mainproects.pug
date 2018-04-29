@@ -16,36 +16,36 @@ section.mainproects
   .main__top
     .main__text
       .container
-        h1.main__h1 Пректы компании Контекстрой
-        h2.main__h2 Строительная компания Контекстрой
+        h1.main__h1=projectsInfo.title.title
+        h2.main__h2=projectsInfo.title.subTitle
   .container
     .row
       .main__twoblocks
         .main__prev
           include ./breadcrumbs
       .editor.mainproects__par
-        span В этом разделе Вы можете ознакомиться с выполненными нами проектами
+        h2 В этом разделе Вы можете ознакомиться с выполненными нами проектами
       .mainproects__form
         +applicationForm()(containerClass='bg-white') 
       ul.col-xs-12.mainproects__list
-        each item in proectsList
+        each item in projectsInfo.projectsList
           li.mainproects__items.col-xs-12
-            img.mainproects__img.col-md-4.col-sm-6(src=item.image)
+            img.mainproects__img.col-md-4.col-sm-6(src=item.thumb)
             .mainproects__text.col-md-8.col-sm-6
               p.mainproects__heading=item.name
-              p=item.work
-              p=item.volume
-              p=item.text
-              a(href='/portfolio').mainproects__btn.btn ПОДРОБНЕЕ  
-    .mainproects__buttons.text-inline.col-md-12
-      a(href='#').mainproects__button.btn 1
-      a(href='#').mainproects__button.btn 2
-      a(href='#').mainproects__button.btn 3
-      a(href='#').mainproects__button.btn 4
-      a(href='#').mainproects__button.btn 5
-      a(href='#').mainproects__button.btn 6
-      a(href='#').mainproects__button.btn 7
-      a(href='#').mainproects__button.btn 8                                                  
+              p= 'Материалы: ' + item.material
+              p= 'Площадь: ' + item.sqare
+              p= 'Описание проекта ' + item.text
+              a(href='/proects/' + item.seoUrl).mainproects__btn.btn ПОДРОБНЕЕ  
+    //- .mainproects__buttons.text-inline.col-md-12
+    //-   a(href='#').mainproects__button.btn 1
+    //-   a(href='#').mainproects__button.btn 2
+    //-   a(href='#').mainproects__button.btn 3
+    //-   a(href='#').mainproects__button.btn 4
+    //-   a(href='#').mainproects__button.btn 5
+    //-   a(href='#').mainproects__button.btn 6
+    //-   a(href='#').mainproects__button.btn 7
+    //-   a(href='#').mainproects__button.btn 8                                                  
   .main__applicationform
     .container
       +applicationForm()

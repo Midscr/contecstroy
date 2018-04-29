@@ -25,7 +25,7 @@ section.headerbottom
           ul.headerbottom__nav
             each item in navBottom
               li(class=item.subMenu? 'indicator' : '', data-index= index).headerbottom__navitems
-                if !item.subMenu                
+                if !item.subMenu
                   a(href= item.link)= item.title
                 if item.subMenu
                   span= item.title

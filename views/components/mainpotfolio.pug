@@ -6,7 +6,7 @@
 -
   let fotoList = ['/img/gray-foto.jpg', '/img/gray-foto.jpg', '/img/gray-foto.jpg', '/img/gray-foto.jpg', '/img/gray-foto.jpg', '/img/gray-foto.jpg', '/img/gray-foto.jpg', '/img/gray-foto.jpg', '/img/gray-foto.jpg'];
 
-include ./applicationform
+include ./applicationform              
 
 main.mainpotfolio
   .container
@@ -18,32 +18,32 @@ main.mainpotfolio
           ul.main__nav
             each item in navList
               li.main__items
-                a(href=item.link)=item.tex
+                a(href=item.link)=item.text
       .editor
-        span Проект: г. Ипатово, ОАО «Ипатовский пивзавод»
+        h2= 'Проект: ' + title
       .mainpotfolio__prev.col-xs-12
         .mainpotfolio__left.col-md-6.col-sm-6
           .editor.mainpotfolio__text
-            p.mainpotfolio__bold Расположение:
-            p.mainpotfolio__light Монтаж полимерных полов
+            p.mainpotfolio__bold= 'Материалы'
+            p.mainpotfolio__light= material
           .editor.mainpotfolio__text
             p.mainpotfolio__bold Объем работ и сроки исполнения
-            p.mainpotfolio__light Объем: 2 245 кв.м.; Период работ: - 07.2012г.
+            p.mainpotfolio__light= 'Объем: ' + sqare + '; Период работ: ' + date       
         .mainpotfolio__map.col-md-6.col-sm-6
           img(src='/img/map.jpg')
       .mainpotfolio__next.col-xs-12    
         .mainpotfolio__left.col-md-6.col-sm-6
           .editor
-            span Описание проекта
+            h3 Описание проекта
           .editor.mainpotfolio__text
-            p.mainpotfolio__light Использованный материал для полов: «Sika»263 SL, Двухкомпонентная эпоксидная композиция высоко армированная кварцевым песком
+            p.mainpotfolio__light= text
         .mainpotfolio__map.col-md-6.col-sm-6
           iframe.mainpotfolio__video(src="https://www.youtube.com/embed/casgv9Y8I1w?ecver=2"  height="300" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)
     .row  
       .mainproects__form
          +applicationForm()(containerClass='bg-white')
       .editor
-        span Фото с объекта  
+        h2 Фото с объекта  
       ul.mainpotfolio__fotoList
         each item in fotoList
           li.mainpotfolio__items

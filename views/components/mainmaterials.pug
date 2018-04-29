@@ -38,7 +38,7 @@ section.mainmaterials
         .mainmaterials__applicationblock.main__applicationform.col-md-6 
           +applicationForm()(containerClass='box')
     .editor.mainmaterials__rates  
-      span Расценки на услуги
+      h2 Расценки на услуги
     table.mainmaterials__table.col-xs-12
       thead
         tr
@@ -57,7 +57,7 @@ section.mainmaterials
       img(src=materialsInfo.textBlock1.img)
     .mainmaterials__equipment.col-md-6
       .editor
-        span= materialsInfo.textBlock1.title
+        h2= materialsInfo.textBlock1.title
         div!= materialsInfo.textBlock1.text
       ul.mainmaterials__imgList
         each item in materialsInfo.textBlock1.logoImg
@@ -65,7 +65,7 @@ section.mainmaterials
             img(src=item)
     .mainmaterials__equipment.col-md-6
       .editor
-        span= materialsInfo.textBlock2.title
+        h2= materialsInfo.textBlock2.title
         div!= materialsInfo.textBlock2.text
       ul.mainmaterials__imgList2
         each item in materialsInfo.textBlock2.logoImg
@@ -75,7 +75,7 @@ section.mainmaterials
       img(src=materialsInfo.textBlock2.img)
     .row
       .main__amenities.editor.col-md-12
-        span Отзыв по одному из поектов  
+        h2 Отзыв по одному из поектов  
   .mainmaterials__slider
     include ./slider
   .main__applicationform

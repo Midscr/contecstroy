@@ -21,12 +21,12 @@ main.main
       .main__paragraph.editor
         p= infoMain.title.text
       .main__amenities.editor
-        span= infoMain.app.title
+        h2= infoMain.app.title
       .main__cards
         .main__card
             include ./card
       .main__amenities.editor
-        span= infoMain.text1.title
+        h2= infoMain.text1.title
       .main__paragraph.editor
         p= infoMain.text1.text
       blockquote.main__blockquote.blockquote
@@ -44,13 +44,13 @@ main.main
         .main__bgimage.col-md-8.col-sm-12
         a(href=infoMain.promo.link).main__btn.btn.main__bigbtn.col-xs-12= infoMain.promo.name
       .main__amenities.editor
-        span= infoMain.text3.title
+        h2= infoMain.text3.title
       .main__paragraph.editor
         p=infoMain.text3.text
       blockquote.main__blockquote.blockquote
         p=infoMain.text3.subText
     .main__amenities.editor
-      span Отзыв по одному из поектов
+      h2 Отзыв по одному из поектов
     include ./slider
   .main__applicationform
     .container
