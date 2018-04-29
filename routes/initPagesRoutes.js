@@ -13,7 +13,7 @@ const floorsList = require('../components/floorsList');
 const panels = require('../components/dataPanels');
 const panelsList = require('../components/panelsList');
 const roofs = require('../components/dataRoofs');
-const roofsList = require('../components/RoofsList');
+const roofsList = require('../components/roofsList');
 
 let emptyCity = {
   population: 1000000,
