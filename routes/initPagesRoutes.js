@@ -153,6 +153,7 @@ function initPagesRoutes(app) {
         let city = cities.filter(item => item.cityEn.toLowerCase() === cityDomainName)[0];
         let noCity = cities.filter(item => item.cityEn.toLowerCase() === 'stavropol')[0];
         emptyCity.postAddress = noCity.postAddress;
+        console.log(req.headers.host);
 
         if (!city && req.headers.host != domain) {
           let err = new Error('Not Found');
@@ -213,6 +214,7 @@ function initPagesRoutes(app) {
         let city = cities.filter(item => item.cityEn.toLowerCase() === cityDomainName)[0];
         let noCity = cities.filter(item => item.cityEn.toLowerCase() === 'stavropol')[0];
         emptyCity.postAddress = noCity.postAddress;
+        console.log(req.headers.host);
 
         if (!city && req.headers.host != domain) {
           let err = new Error('Not Found');
@@ -277,6 +279,7 @@ function initPagesRoutes(app) {
         let city = cities.filter(item => item.cityEn.toLowerCase() === cityDomainName)[0];
         let noCity = cities.filter(item => item.cityEn.toLowerCase() === 'stavropol')[0];
         emptyCity.postAddress = noCity.postAddress;
+        console.log(req.headers.host);
 
         if (!city && req.headers.host != domain) {
           let err = new Error('Not Found');
