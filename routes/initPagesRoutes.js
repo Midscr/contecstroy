@@ -11,7 +11,7 @@ const projects = require('../components/projects/data');
 const floors = require('../components/dataFloors');
 const floorsList = require('../components/floorsList');
 const panels = require('../components/dataPanels');
-const panelsList = require('../components/PanelsList');
+const panelsList = require('../components/panelsList');
 const roofs = require('../components/dataRoofs');
 const roofsList = require('../components/RoofsList');
 
