@@ -20,11 +20,11 @@ main.main
                 a(href=item.link)=item.text
       .main__paragraph.editor
         p= infoMain.title.text
-      .main__amenities.editor
-        h2= infoMain.app.title
-      .main__cards
-        .main__card
-            include ./card
+      //- .main__amenities.editor
+      //-   h2= infoMain.app.title
+      //- .main__cards
+      //-   .main__card
+      //-       include ./card
       .main__amenities.editor
         h2= infoMain.text1.title
       .main__paragraph.editor
@@ -34,7 +34,8 @@ main.main
     .main__action
       .row
         .main__heading.col-md-4.col-sm-12
-          .main__list= infoMain.text2.title
+          //- .main__list 
+          p= infoMain.text2.title
           ul
             each item in infoMain.text2.list
               li.main__markeritem
@@ -42,7 +43,7 @@ main.main
                 span= item
           a(href="#").main__btn.btn РАССЧЕТ СТОИМОСТИ    
         .main__bgimage.col-md-8.col-sm-12
-        a(href=infoMain.promo.link).main__btn.btn.main__bigbtn.col-xs-12= infoMain.promo.name
+        //- a(href=infoMain.promo.link).main__btn.btn.main__bigbtn.col-xs-12= infoMain.promo.name
       .main__amenities.editor
         h2= infoMain.text3.title
       .main__paragraph.editor
