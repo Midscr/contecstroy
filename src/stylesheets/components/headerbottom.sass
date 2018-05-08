@@ -22,12 +22,12 @@
     & a, & span
       display: block
       text-decoration: none
-      padding: 10px 39px !important
+      padding: 10px 39px 
       color: $color-text-light-gray
       @media(max-width: 1200px)
-        padding: 10px 20px !important
+        padding: 10px 20px 
       @media(max-width: 991px)
-        padding: 10px 7px !important
+        padding: 10px 7px 
         display: block  
     &:hover
       background-color: $color-hover-gray
@@ -39,6 +39,14 @@
     transition: .5s opacity
     opacity: 0
     z-index: 1
+    &_child
+      position: absolute
+      left: 263px
+      top: 0
+      width: 250px
+      background-color: $color-dark-gray
+      opacity: 0
+      transition: all .4s ease
     @media(max-width: 767px)
       position: static
       overflow: hidden
@@ -48,9 +56,16 @@
     position: relative
     transition: .5s opacity
     background-color: $color-dark-gray
-    font-size: 14px
-    &:hover
+    &_child
+      &:hover
+        background-color: $color-hover-gray
+    & a, span
+      font-size: 14px
+      padding: 5px 10px
+    &:hover, &:focus
       background-color: $color-hover-gray
+      & > .headerbottom__subnav_child
+        opacity: 1
     @media(max-width: 767px)
       padding-left: 30px
 .indicator

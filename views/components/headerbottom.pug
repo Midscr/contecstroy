@@ -1,12 +1,3 @@
--
-  //- let navBottom = [{link: 'index.html', title: 'Главная'},
-  //-   {link: 'materials.html', title: 'Промышленные полы', subMenu: [{links: "#", text: 'Полимерные полы'}, {links: "industrial.html", text: 'Бетонные полы'}, {links: "#", text: 'Топпинговые полы'}]},
-  //-   {link: 'panels.html', title: 'Сендвич панели'},
-  //-   {link: 'materials.html', title: 'Мягкая кровля'},
-  //-   {link: 'proects.html', title: 'Проекты'},
-  //-   {link: 'contacts.html', title: 'Контакты'}
-  //-   ];
-
 section.headerbottom
   .navbar.navbar-inverse 
     .container
@@ -30,6 +21,13 @@ section.headerbottom
                 if item.subMenu
                   span= item.title
                   ul.headerbottom__subnav
+                    if item.subMenuChild
+                      li.headerbottom__subitem 
+                        span= item.subMenuChild[0].tag
+                        ul.headerbottom__subnav_child
+                          each child in item.subMenuChild
+                            li.headerbottom__subitem_child
+                              a(href=child.links)=child.text
                     each subitem in item.subMenu
                       li.headerbottom__subitem
                         a(href=subitem.links)=subitem.text

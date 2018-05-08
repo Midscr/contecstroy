@@ -9,9 +9,9 @@ module.exports = function(city) {
       logo: '/img/logo.jpg',
       workTime: 'Пн-Сб: 07:00-21:00',
       weekend: 'Вс',
-      tel: '8(804) 333-70-60',
-      fax: '8(495) 300-00-00',
-      email: 'manager@adres.ru',
+      tel: '8(000) 000-00-00',
+      fax: '8(000) 000-00-00',
+      email: 'info@contecstroy.ru',
       messengers: [
         {
           name: 'Viber',

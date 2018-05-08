@@ -1,6 +1,7 @@
 .breadcrumb
-  a(href="/") Главная 
-  | >
-  a(href="/") Промышленные полы
-  | >
-  a(href="/") Полимерные полы
+  each item, index in breadcrumb
+    if index < breadcrumb.length - 1
+      a(href=item.url)=item.label
+      | >
+    else
+      a(href=item.url)=item.label

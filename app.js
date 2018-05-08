@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const SMSru = require('sms_ru');
 const initPagesRoutes = require('./routes/initPagesRoutes');
+const breadcrumb = require('express-url-breadcrumb');
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(breadcrumb());
 
 initPagesRoutes(app);
 

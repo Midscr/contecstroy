@@ -13,9 +13,10 @@ const navTop = [
 let navBottom = [
   { link: '/', title: 'Главная' },
   {
-    link: '/materials',
+    link: '/industrial-floors',
     title: 'Промышленные полы',
-    subMenu: ''
+    subMenu: '',
+    subMenuChild: ''
   },
   {
     link: '/panels',
@@ -38,9 +39,10 @@ const navAnchor = [
 ];
 
 if (subMenuFloors.length > 1) {
-  navBottom.find(item => item.link === '/materials').subMenu = subMenuFloors;
+  navBottom.find(item => item.link === '/industrial-floors').subMenu = subMenuFloors.filter(item => item.tag === '');
+  navBottom.find(item => item.link === '/industrial-floors').subMenuChild = subMenuFloors.filter(item => item.tag === 'По назначению');
 } else {
-  navBottom.find(item => item.link === '/materials').link = subMenuFloors[0].links;
+  navBottom.find(item => item.link === '/industrial-floors').link = subMenuFloors[0].links;
 }
 if (subMenuRoofs.length > 1) {
   navBottom.find(item => item.link === '/roofs').subMenu = subMenuRoofs;
@@ -52,5 +54,4 @@ if (subMenuPanels.length > 1) {
 } else {
   navBottom.find(item => item.link === '/panels').link = subMenuPanels[0].links;
 }
-
 module.exports = { navTop: navTop, navBottom: navBottom, navAnchor: navAnchor };

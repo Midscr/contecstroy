@@ -14,6 +14,7 @@ const panels = require('../components/dataPanels');
 const panelsList = require('../components/panelsList');
 const roofs = require('../components/dataRoofs');
 const roofsList = require('../components/roofsList');
+const url = require('url');
 
 let emptyCity = {
   population: 1000000,
@@ -153,7 +154,11 @@ function initPagesRoutes(app) {
         let city = cities.filter(item => item.cityEn.toLowerCase() === cityDomainName)[0];
         let noCity = cities.filter(item => item.cityEn.toLowerCase() === 'stavropol')[0];
         emptyCity.postAddress = noCity.postAddress;
-        console.log(req.headers.host);
+        req.app.locals.breadcrumb.find(item => item.label === 'Home').label = 'Главная';
+        let crumbs = req.app.locals.breadcrumb.find(item => item.url === 'http://' + domain + req.url);
+        if (crumbs) {
+          crumbs.label = pages.find(item => item.route === req.url).pName;
+        }
 
         if (!city && req.headers.host != domain) {
           let err = new Error('Not Found');
@@ -214,7 +219,12 @@ function initPagesRoutes(app) {
         let city = cities.filter(item => item.cityEn.toLowerCase() === cityDomainName)[0];
         let noCity = cities.filter(item => item.cityEn.toLowerCase() === 'stavropol')[0];
         emptyCity.postAddress = noCity.postAddress;
-        console.log(req.headers.host);
+        req.app.locals.breadcrumb.find(item => item.label === 'Home').label = 'Главная';
+        req.app.locals.breadcrumb.find(item => item.label === 'proects').label = 'проекты';
+        let crumbs = req.app.locals.breadcrumb.find(item => item.url === 'http://' + domain + req.url);
+        if (crumbs) {
+          crumbs.label = project.name;
+        }
 
         if (!city && req.headers.host != domain) {
           let err = new Error('Not Found');
@@ -279,7 +289,18 @@ function initPagesRoutes(app) {
         let city = cities.filter(item => item.cityEn.toLowerCase() === cityDomainName)[0];
         let noCity = cities.filter(item => item.cityEn.toLowerCase() === 'stavropol')[0];
         emptyCity.postAddress = noCity.postAddress;
-        console.log(req.headers.host);
+        req.app.locals.breadcrumb.find(item => item.label === 'Home').label = 'Главная';
+        if (req.app.locals.breadcrumb.find(item => item.label === 'industrial floors')) {
+          req.app.locals.breadcrumb.find(item => item.label === 'industrial floors').label = 'Промышленные полы';
+        }
+        if (req.app.locals.breadcrumb.find(item => item.label === 'panels')) {
+          req.app.locals.breadcrumb.find(item => item.label === 'panels').label = 'Сэндвич панели';
+        }
+        if (req.app.locals.breadcrumb.find(item => item.label === 'roofs')) {
+          req.app.locals.breadcrumb.find(item => item.label === 'roofs').label = 'Мягкая кровля';
+        }
+
+        let crumbs = req.app.locals.breadcrumb.find(item => item.url === 'http://' + domain + req.url);
 
         if (!city && req.headers.host != domain) {
           let err = new Error('Not Found');
@@ -288,6 +309,9 @@ function initPagesRoutes(app) {
         } else if (city) {
           address = deliveryAddresses.filter(item => item.city.toLowerCase() === city.city.toLowerCase());
           let pageItem = pageList(city).find(item => item.name === page.name);
+          if (crumbs) {
+            crumbs.label = pageItem.title;
+          }
           res.render('industrial.pug', {
             city: city,
             cities: cities,
@@ -307,6 +331,9 @@ function initPagesRoutes(app) {
         } else {
           address = deliveryAddresses.filter(item => item.city.toLowerCase() === noCity.city.toLowerCase());
           let pageItem = pageList(noCity).find(item => item.name === page.name);
+          if (crumbs) {
+            crumbs.label = pageItem.title;
+          }
           res.render('industrial.pug', {
             title: 'Home',
             city: noCity,
