@@ -14,11 +14,11 @@ main.mainpotfolio
       .main__twoblocks
         .main__prev.col-md-6
           include ./breadcrumbs
-        .main__next.col-md-6
-          ul.main__nav
-            each item in navList
-              li.main__items
-                a(href=item.link)=item.text
+        //- .main__next.col-md-6
+        //-   ul.main__nav
+        //-     each item in navList
+        //-       li.main__items
+        //-         a(href=item.link)=item.text
       .editor
         h2= 'Проект: ' + title
       .mainpotfolio__prev.col-xs-12
@@ -38,7 +38,7 @@ main.mainpotfolio
           .editor.mainpotfolio__text
             p.mainpotfolio__light= text
         .mainpotfolio__map.col-md-6.col-sm-6
-          iframe.mainpotfolio__video(src="https://www.youtube.com/embed/casgv9Y8I1w?ecver=2"  height="300" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)
+          //- iframe.mainpotfolio__video(src="https://www.youtube.com/embed/casgv9Y8I1w?ecver=2"  height="300" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)
     .row  
       .mainproects__form
          +applicationForm()(containerClass='bg-white')

@@ -32,19 +32,17 @@ footer.footerprev
                 a(href=add.link)=add.text      
       .col-md-6.col-sm-4.col-xs-12
         .row  
-          .col-md-5.col-md-offset-1.text-right.col-xs-12
+          .col-md-5.col-md-offset-7.text-right.col-xs-12
             ul.footerprev__numberslist
               each item in numberCall
                 li.footerprev__numbers=item
-          .col-md-6.col-xs-12
-            ul.footerprev__pickupList
-              each item in pickupList
-                li.footerprev__pickupitem
-                  a(href=item.link)=item.text
-    ul.footerprev__paymentmethod Способ оплаты:
-      each item in paymentmethodList
-        li.footerprev__payitem
-          img(src=item.image)
-    .footerprev__details-link
-      a.footerprev__details(href="#") Подробнее об оплате
+          //- .col-md-6.col-xs-12
+          //-   ul.footerprev__pickupList
+          //-     each item in pickupList
+          //-       li.footerprev__pickupitem
+          //-         a(href=item.link)=item.text
+    .footerprev__paymentmethod Способ оплаты:
+      p Наличный и безналичный расчет
+    //- .footerprev__details-link
+    //-   a.footerprev__details(href="#") Подробнее об оплате
             

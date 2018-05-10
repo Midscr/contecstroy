@@ -3,25 +3,6 @@
   {link:'#', text:'Оборудование'},
   {link:'#', text:'Наши проекты'},
   {link:'#', text:'Наши проекты'}];
--
-  let clientsList = ['/img/energomera-logo.png', '/img/leroy-merlin-logo.png', '/img/magnit-logo.png', '/img/marriott-logo.png', '/img/master-logo.png', '/img/russia-logo.png',
-  '/img/lovechok-logo.png', '/img/derways-logo.png', '/img/evrohim-logo.png', '/img/sbk-logo.png', '/img/schlumberger-logo.png', '/img/jako-logo.png', '/img/arms-logo.png',
-  '/img/russian-federation-logo.png', '/img/achaluki-logo.png', '/img/spetsstroy-logo.png', '/img/arnest-logo.png', '/img/chokoland-logo.png'];
--
-  let logoList = ['/img/allen-logo.png',
-  '/img/pullman-logo.png',
-  '/img/leica-logo.png',
-  '/img/hilti-logo.png',
-  '/img/whiteman-logo.png',
-  '/img/blastrac-logo.png'];
--
-  let logoList2 = ['/img/ingri-logo.png',
-  '/img/BASF-logo.png',
-  '/img/rsl-logo.png',
-  '/img/sika-logo.png',
-  '/img/qtp-logo.png',
-  '/img/turex-logo.png',
-  '/img/universam-logo.png'];  
 
 include ./applicationform
 
@@ -36,17 +17,17 @@ main.mainabout
       .main__twoblocks
         .main__prev.col-md-6
           include ./breadcrumbs
-        .main__next.col-md-6
-          ul.main__nav
-            each item in navList
-              li.main__items
-                a(href=item.link)=item.text
+        //- .main__next.col-md-6
+        //-   ul.main__nav
+        //-     each item in navList
+        //-       li.main__items
+        //-         a(href=item.link)=item.text
       .editor.mainabout__keyspecialists
         h2= aboutInfo.content.title
       .mainabout__cards
         include ./cards
-      .mainabout__linkspecialists
-        a(href=aboutInfo.content.specialist.link)= aboutInfo.content.specialist.text
+      //- .mainabout__linkspecialists
+      //-   a(href=aboutInfo.content.specialist.link)= aboutInfo.content.specialist.text
       blockquote.main__blockquote.blockquote
         p= aboutInfo.content.specialist.blockquote
       .editor.mainabout__keyspecialists
@@ -87,8 +68,8 @@ main.mainabout
         li.mainabout__items.mainabout__items2
           img(src=item)
     .editor.mainabout__comment.mainabout__keyspecialists.col-xs-12
-      span Отзыв по одному из проектов
-  include ./slider
+  //-     span Отзыв по одному из проектов
+  //- include ./slider
   .main__applicationform
     .container
       +applicationForm()

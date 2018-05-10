@@ -15,11 +15,11 @@ main.maincontact
       .main__twoblocks
         .main__prev.col-md-6
           include ./breadcrumbs
-        .main__next.col-md-6
-          ul.main__nav
-            each item in navList
-              li.main__items
-                a(href=item.link)=item.text
+        //- .main__next.col-md-6
+        //-   ul.main__nav
+        //-     each item in navList
+        //-       li.main__items
+        //-         a(href=item.link)=item.text
       .editor.text-center.maincontact__company
         h2= 'Компания ' + contactInfo.company.name + ' ' + city.prepositionalCity  
       .maincontact__table1.col-md-6.col-xs-12
@@ -72,40 +72,41 @@ main.maincontact
         .div!= contactInfo.text.text
       .maincontact__cards
         include ./cards
-      .editor.maincontact__popular
-        h2 Популярные услуги
-    .table
-      table.maincontact__table
-        thead
-          tr
-            th.maincontact__headers Промышленные полы
-            th.maincontact__headers Облицовка сендвич панелями
-            th.maincontact__headers Информационные стенды
-        tbody.maincontact__body   
-          tr
-            td.maincontact__items Полимерные полы
-            td.maincontact__items Уличные экраны
-            td.maincontact__items Стенды охрана труда
-          tr
-            td.maincontact__items Полированный бетон
-            td.maincontact__items Светодиодные часы
-            td.maincontact__items Стенды для школы
-          tr
-            td.maincontact__items
-            td.maincontact__items
-            td.maincontact__items
-          tr
-            td.maincontact__items
-            td.maincontact__items
-            td.maincontact__items 
-          tr
-            td.maincontact__items
-            td.maincontact__items
-            td.maincontact__items 
-          tr
-            td.maincontact__items
-            td.maincontact__items
-            td.maincontact__items
+    //-   .editor.maincontact__popular
+    //-     h2 Популярные услуги
+    //- .table
+    //-   table.maincontact__table
+    //-     thead
+    //-       tr
+    //-         th.maincontact__headers Промышленные полы
+    //-         th.maincontact__headers Облицовка сендвич панелями
+    //-         th.maincontact__headers Информационные стенды
+    //-     tbody.maincontact__body   
+    //-       tr
+    //-         td.maincontact__items Полимерные полы
+    //-         td.maincontact__items Уличные экраны
+    //-         td.maincontact__items Стенды охрана труда
+    //-       tr
+    //-         td.maincontact__items Полированный бетон
+    //-         td.maincontact__items Светодиодные часы
+    //-         td.maincontact__items Стенды для школы
+    //-       tr
+    //-         td.maincontact__items
+    //-         td.maincontact__items
+    //-         td.maincontact__items
+    //-       tr
+    //-         td.maincontact__items
+    //-         td.maincontact__items
+    //-         td.maincontact__items 
+    //-       tr
+    //-         td.maincontact__items
+    //-         td.maincontact__items
+    //-         td.maincontact__items 
+    //-       tr
+    //-         td.maincontact__items
+    //-         td.maincontact__items
+    //-         td.maincontact__items
   .main__applicationform
     .container
       include ./applicationform
+      +applicationForm()
