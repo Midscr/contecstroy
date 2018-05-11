@@ -1,0 +1,34 @@
+-
+  let navList = [{link:'#', text:'Услуги и цены'},
+  {link:'#', text:'Оборудование'},
+  {link:'#', text:'Наши проекты'},
+  {link:'#', text:'Наши проекты'}];
+
+include ./applicationform
+
+main.mainabout
+  .main__top
+    .main__text
+      .container
+        h1.main__h1= clientsInfo.title.title
+        h2.main__h2= clientsInfo.title.subTitle
+  .container
+    .row
+      .main__twoblocks
+        .main__prev.col-md-6
+          include ./breadcrumbs
+        //- .main__next.col-md-6
+        //-   ul.main__nav
+        //-     each item in navList
+        //-       li.main__items
+        //-         a(href=item.link)=item.text
+      .editor.mainabout__keyspecialists!= clientsInfo.content.text
+      .editor.mainabout__keyspecialists
+        h2= aboutInfo.content.title2
+      ul.mainabout__list.col-xs-12
+        each item in aboutInfo.content.clientsList
+          li.mainabout__items.col-md-2.col-sm-4.col-xs-12
+            img(src=item)
+  .main__applicationform
+    .container
+      +applicationForm()

@@ -1,0 +1,29 @@
+-
+  let navList = [{link:'#', text:'Услуги и цены'},
+  {link:'#', text:'Оборудование'},
+  {link:'#', text:'Наши проекты'},
+  {link:'#', text:'Наши проекты'}];
+
+include ./applicationform
+
+main.mainabout
+  .main__top
+    .main__text
+      .container
+        h1.main__h1= geographyInfo.title.title
+        h2.main__h2= geographyInfo.title.subTitle
+  .container
+    .row
+      .main__twoblocks
+        .main__prev.col-md-6
+          include ./breadcrumbs
+        //- .main__next.col-md-6
+        //-   ul.main__nav
+        //-     each item in navList
+        //-       li.main__items
+        //-         a(href=item.link)=item.text
+      .editor.mainabout__keyspecialists!= geographyInfo.content.text
+      
+  .main__applicationform
+    .container
+      +applicationForm()

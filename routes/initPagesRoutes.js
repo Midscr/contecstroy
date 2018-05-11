@@ -6,6 +6,10 @@ const infoMain = require('../components/main');
 const infoContact = require('../components/contact');
 const infoMaterials = require('../components/materials');
 const infoAbout = require('../components/aboutcompany');
+const infoClients = require('../components/clients');
+const infoCert = require('../components/cert');
+const infoGeography = require('../components/geography');
+const infoEquipment = require('../components/equipment');
 const infoProjects = require('../components/projectList');
 const projects = require('../components/projects/data');
 const floors = require('../components/dataFloors');
@@ -175,9 +179,6 @@ function initPagesRoutes(app) {
             route: opts.route,
             pageName: opts.pageName,
             pName: opts.pName,
-            pRating: opts.pRating,
-            pVotes: opts.pVotes,
-            pPrice: opts.pPrice,
             navTop: nav.navTop,
             navBottom: nav.navBottom,
             navList: nav.navAnchor,
@@ -185,7 +186,11 @@ function initPagesRoutes(app) {
             contactInfo: infoContact(city || noCity),
             materialsInfo: infoMaterials(city || noCity),
             aboutInfo: infoAbout(city || noCity),
-            projectsInfo: infoProjects(city || noCity)
+            projectsInfo: infoProjects(city || noCity),
+            clientsInfo: infoClients(city || noCity),
+            certInfo: infoCert(city || noCity),
+            geographyInfo: infoGeography(city || noCity),
+            equipmentInfo: infoEquipment(city || noCity)
           });
         } else {
           address = deliveryAddresses.filter(item => item.city.toLowerCase() === noCity.city.toLowerCase());
@@ -198,17 +203,18 @@ function initPagesRoutes(app) {
             route: opts.route,
             pageName: opts.pageName,
             pName: opts.pName,
-            pRating: opts.pRating,
-            pVotes: opts.pVotes,
             navTop: nav.navTop,
             navBottom: nav.navBottom,
-            pPrice: opts.pPrice,
             navList: nav.navAnchor,
             infoMain: infoMain(noCity),
             contactInfo: infoContact(noCity),
             materialsInfo: infoMaterials(noCity),
             aboutInfo: infoAbout(noCity),
-            projectsInfo: infoProjects(noCity)
+            projectsInfo: infoProjects(noCity),
+            clientsInfo: infoClients(city || noCity),
+            certInfo: infoCert(city || noCity),
+            geographyInfo: infoGeography(city || noCity),
+            equipmentInfo: infoEquipment(city || noCity)
           });
         }
       };

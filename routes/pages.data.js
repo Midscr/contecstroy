@@ -3,72 +3,72 @@ module.exports = [
     route: '/',
     indexLink: 'index.pug',
     pageName: 'Главная',
-    pName: 'Главная',
-    pRating: '4.8',
-    pVotes: '238',
-    pPrice: '15000'
+    pName: 'Главная'
   },
   {
     route: '/aboutcompany',
     indexLink: 'aboutcompany.pug',
     pageName: 'О компании',
-    pName: 'О компании',
-    pRating: '4.5',
-    pVotes: '210',
-    pPrice: '7900'
+    pName: 'О компании'
   },
   {
     route: '/materials',
     indexLink: 'materials.pug',
     pageName: 'Материалы',
-    pName: 'Материалы',
-    pRating: '4.9',
-    pVotes: '256',
-    pPrice: '30000'
+    pName: 'Материалы'
   },
   {
     route: '/proects',
     indexLink: 'proects.pug',
     pageName: 'Проекты',
-    pName: 'Проекты',
-    pRating: '4.6',
-    pVotes: '220',
-    pPrice: '2500'
+    pName: 'Проекты'
   },
   {
     route: '/contacts',
     indexLink: 'contacts.pug',
     pageName: 'Контакты',
-    pName: 'Контакты',
-    pRating: '4.7',
-    pVotes: '215',
-    pPrice: '9000'
+    pName: 'Контакты'
   },
   {
     route: '/industrial-floors',
     indexLink: 'industrial.pug',
     pageName: 'Полимерные полы',
-    pName: 'Полимерные полы',
-    pRating: '4.7',
-    pVotes: '215',
-    pPrice: '9000'
+    pName: 'Полимерные полы'
   },
   {
     route: '/panels',
     indexLink: 'panels.pug',
     pageName: 'Сэндвич панели',
-    pName: 'Сэндвич панели',
-    pRating: '4.7',
-    pVotes: '215',
-    pPrice: '9000'
+    pName: 'Сэндвич панели'
   },
   {
     route: '/portfolio',
     indexLink: 'portfolio.pug',
     pageName: 'Сэндвич панели',
-    pName: 'Сэндвич панели',
-    pRating: '4.7',
-    pVotes: '215',
-    pPrice: '9000'
+    pName: 'Сэндвич панели'
+  },
+  {
+    route: '/nashi-klienty',
+    indexLink: 'clients.pug',
+    pageName: 'Наши клиенты',
+    pName: 'Наши клиенты'
+  },
+  {
+    route: '/cert',
+    indexLink: 'cert.pug',
+    pageName: 'Сертификаты',
+    pName: 'Сертификаты'
+  },
+  {
+    route: '/geography',
+    indexLink: 'geography.pug',
+    pageName: 'География работы',
+    pName: 'География работы'
+  },
+  {
+    route: '/equipment',
+    indexLink: 'equipment.pug',
+    pageName: 'Оборудование',
+    pName: 'Оборудование'
   }
 ];
