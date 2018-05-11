@@ -12,6 +12,7 @@ const infoGeography = require('../components/geography');
 const infoEquipment = require('../components/equipment');
 const infoProjects = require('../components/projectList');
 const projects = require('../components/projects/data');
+const projectsTags = require('../components/projects/tags');
 const floors = require('../components/dataFloors');
 const floorsList = require('../components/floorsList');
 const panels = require('../components/dataPanels');
@@ -42,12 +43,87 @@ function initPagesRoutes(app) {
     const fromEmail = 'rb@ray-bit.ru';
     const toEmail = 'rb@ray-bit.ru';
 
+    app.get('/proects?', (req, res, next) => {
+      if (projectsTags.find(item => item.tag === req.query.tag)) {
+        let cityDomainName = req.hostname.replace(/\..*/, '');
+        let city = cities.filter(item => item.cityEn.toLowerCase() === cityDomainName)[0];
+        let noCity = cities.filter(item => item.cityEn.toLowerCase() === 'stavropol')[0];
+        emptyCity.postAddress = noCity.postAddress;
+        req.app.locals.breadcrumb.find(item => item.label === 'Home').label = 'Главная';
+        let crumbs = req.app.locals.breadcrumb.find(item => item.url === 'http://' + domain + req.path);
+        if (crumbs) {
+          crumbs.label = 'Проекты';
+        }
+        if (!city && req.headers.host != domain) {
+          let err = new Error('Not Found');
+          err.status = 404;
+          next(err);
+        } else if (city) {
+          address = deliveryAddresses.filter(item => item.city.toLowerCase() === city.city.toLowerCase());
+          let filterProjectsList = projects.filter(item => item.tag === req.query.tag);
+          let filterProjectsData = infoProjects(city);
+          filterProjectsData.projectsList = filterProjectsList;
+          res.render('proects.pug', {
+            city: city || noCity,
+            cities: cities,
+            domain: cityDomainName + '.' + domain,
+            address: address,
+            route: '/proects',
+            pageName: 'Проекты',
+            pName: 'Проекты',
+            navTop: nav.navTop,
+            navBottom: nav.navBottom,
+            navList: nav.navAnchor,
+            infoMain: infoMain(city || noCity),
+            contactInfo: infoContact(city || noCity),
+            materialsInfo: infoMaterials(city || noCity),
+            aboutInfo: infoAbout(city || noCity),
+            projectsInfo: filterProjectsData,
+            clientsInfo: infoClients(city || noCity),
+            certInfo: infoCert(city || noCity),
+            geographyInfo: infoGeography(city || noCity),
+            equipmentInfo: infoEquipment(city || noCity)
+          });
+        } else {
+          address = deliveryAddresses.filter(item => item.city.toLowerCase() === noCity.city.toLowerCase());
+          let filterProjectsList = projects.filter(item => item.tag === req.query.tag);
+          let filterProjectsData = infoProjects(city);
+          filterProjectsData.projectsList = filterProjectsList;
+          res.render('proects.pug', {
+            title: 'Home',
+            city: noCity,
+            cities: cities,
+            address: address,
+            domain: domain,
+            route: '/proects',
+            pageName: 'Проекты',
+            pName: 'Проекты',
+            navTop: nav.navTop,
+            navBottom: nav.navBottom,
+            navList: nav.navAnchor,
+            infoMain: infoMain(noCity),
+            contactInfo: infoContact(noCity),
+            materialsInfo: infoMaterials(noCity),
+            aboutInfo: infoAbout(noCity),
+            projectsInfo: filterProjectsData,
+            clientsInfo: infoClients(city || noCity),
+            certInfo: infoCert(city || noCity),
+            geographyInfo: infoGeography(city || noCity),
+            equipmentInfo: infoEquipment(city || noCity)
+          });
+        }
+      } else {
+        next();
+      }
+    });
     pages.forEach(page => {
       app.get(page.route, routeHandler(page));
     });
+
     projects.forEach(project => {
       app.get('/proects/' + project.seoUrl, projectPage(project));
     });
+
     floorsList.forEach(floor => {
       app.get(floor.links, infoPage(floor, floors));
     });

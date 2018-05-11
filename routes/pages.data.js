@@ -42,12 +42,6 @@ module.exports = [
     pName: 'Сэндвич панели'
   },
   {
-    route: '/portfolio',
-    indexLink: 'portfolio.pug',
-    pageName: 'Сэндвич панели',
-    pName: 'Сэндвич панели'
-  },
-  {
     route: '/nashi-klienty',
     indexLink: 'clients.pug',
     pageName: 'Наши клиенты',

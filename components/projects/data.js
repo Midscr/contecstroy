@@ -8,7 +8,8 @@ const projectsList = [
     text: 'описание проекта',
     thumb: '',
     img: ['', ''],
-    seoUrl: 'nn-lerya'
+    seoUrl: 'nn-lerya',
+    tag: 'wall'
   },
   {
     name: 'ст. Павловская Слобода, МО, «Major Auto» логистический центр',
@@ -19,7 +20,8 @@ const projectsList = [
     text: 'описание проекта',
     thumb: '',
     img: ['', ''],
-    seoUrl: 'ps-major-auto'
+    seoUrl: 'ps-major-auto',
+    tag: 'wall'
   },
   {
     name: 'г. Владикавказ, Дилерский центр «Лада», Архонское шоссе',
@@ -30,7 +32,8 @@ const projectsList = [
     text: 'описание проекта',
     thumb: '',
     img: ['', ''],
-    seoUrl: 'v-lada'
+    seoUrl: 'v-lada',
+    tag: 'roof'
   },
   {
     name: 'г. Троицк, МО, «Леруа Мерлен»',
@@ -41,7 +44,8 @@ const projectsList = [
     text: 'описание проекта',
     thumb: '',
     img: ['', ''],
-    seoUrl: 't-lerya'
+    seoUrl: 't-lerya',
+    tag: 'wall'
   },
   {
     name: 'г. Дербент, «Дербентский вино-коньячный завод»',
@@ -52,7 +56,8 @@ const projectsList = [
     text: 'описание проекта',
     thumb: '',
     img: ['', ''],
-    seoUrl: 'd-vc-zavod'
+    seoUrl: 'd-vc-zavod',
+    tag: 'roof'
   },
   {
     name: 'г. Ставрополь, «Леруа Мерлен»',
@@ -63,7 +68,8 @@ const projectsList = [
     text: 'описание проекта',
     thumb: '',
     img: ['', ''],
-    seoUrl: 'stav-lerya'
+    seoUrl: 'stav-lerya',
+    tag: 'wall'
   },
   {
     name: 'г. Махачкала, First Development R.D., ТРЦ, ул. Бейбулатова, 1',
@@ -74,7 +80,8 @@ const projectsList = [
     text: 'описание проекта',
     thumb: '',
     img: ['', ''],
-    seoUrl: 'mah-first-dev'
+    seoUrl: 'mah-first-dev',
+    tag: 'wall'
   },
   {
     name: 'пос. Новый Редант (респ. Ингушетия), «СтройМаркет»',
@@ -85,7 +92,8 @@ const projectsList = [
     text: 'описание проекта',
     thumb: '',
     img: ['', ''],
-    seoUrl: 'ing-nov-red'
+    seoUrl: 'ing-nov-red',
+    tag: 'roof'
   },
   {
     name: 'г. Ставрополь, ТЦ «Север», пр. Юности, 22',
@@ -96,7 +104,8 @@ const projectsList = [
     text: 'описание проекта',
     thumb: '',
     img: ['', ''],
-    seoUrl: 'stav-sever'
+    seoUrl: 'stav-sever',
+    tag: 'roof'
   },
   {
     name: 'г. Ставрополь, «Спортмастер», пр. Кулакова, 17 А',
@@ -107,7 +116,8 @@ const projectsList = [
     text: 'описание проекта',
     thumb: '',
     img: ['', ''],
-    seoUrl: 'stav-sportmaster'
+    seoUrl: 'stav-sportmaster',
+    tag: 'wall'
   },
   {
     name: 'г. Невинномысск, «Ресурс» холодильник»',
@@ -118,7 +128,8 @@ const projectsList = [
     text: 'описание проекта',
     thumb: '',
     img: ['', ''],
-    seoUrl: 'nev-resyrs'
+    seoUrl: 'nev-resyrs',
+    tag: 'wall'
   },
   {
     name: 'г. Цхинвал, Южная Осетия, «Электросеть» мастерские',
@@ -129,7 +140,8 @@ const projectsList = [
     text: 'описание проекта',
     thumb: '',
     img: ['', ''],
-    seoUrl: 'chin-electroset'
+    seoUrl: 'chin-electroset',
+    tag: 'wall'
   },
   {
     name: 'г. Лермонтов, «Босфор» производство',
@@ -140,7 +152,8 @@ const projectsList = [
     text: 'описание проекта',
     thumb: '',
     img: ['', ''],
-    seoUrl: 'ler-bosfor'
+    seoUrl: 'ler-bosfor',
+    tag: 'wall'
   },
   {
     name: 'г. Черкесск, Склад',
@@ -151,7 +164,8 @@ const projectsList = [
     text: 'описание проекта',
     thumb: '',
     img: ['', ''],
-    seoUrl: 'cherk-sklad'
+    seoUrl: 'cherk-sklad',
+    tag: 'roof'
   },
   {
     name: 'г. Ставрополь, «Блок Пост» производственные здания, пр Кулакова, 34 А',
@@ -162,7 +176,8 @@ const projectsList = [
     text: 'описание проекта',
     thumb: '',
     img: ['', ''],
-    seoUrl: 'stav-blockpost'
+    seoUrl: 'stav-blockpost',
+    tag: 'roof'
   },
   {
     name: 'г. Черкесск, ТЦ «Вершина», ул. Космонавтов, 102',
@@ -173,7 +188,8 @@ const projectsList = [
     text: 'описание проекта',
     thumb: '',
     img: ['', ''],
-    seoUrl: 'cherk-vershina'
+    seoUrl: 'cherk-vershina',
+    tag: 'wall'
   },
   {
     name: 'ст. Раевская, КК, Склады техники, Мин-во Обороны РФ',
@@ -184,7 +200,8 @@ const projectsList = [
     text: 'описание проекта',
     thumb: '',
     img: ['', ''],
-    seoUrl: 'raev-sklad-teh'
+    seoUrl: 'raev-sklad-teh',
+    tag: 'roof'
   },
   {
     name: 'г. Темрюк, КК, Казармы, Мин-во Обороны РФ',
@@ -195,7 +212,8 @@ const projectsList = [
     text: 'описание проекта',
     thumb: '',
     img: ['', ''],
-    seoUrl: 'temr-kazarm'
+    seoUrl: 'temr-kazarm',
+    tag: 'roof'
   },
   {
     name: 'г. Ставрополь, Мегацентр «Коsмос», ул. Доваторцев, 75 А',
@@ -206,7 +224,8 @@ const projectsList = [
     text: 'описание проекта',
     thumb: '',
     img: ['', ''],
-    seoUrl: 'stav-kosmos'
+    seoUrl: 'stav-kosmos',
+    tag: 'wall'
   },
   {
     name: 'г. Невинномысск, «Седрус» производственный комплекс, ул. Низяева, 1 М',
@@ -217,7 +236,8 @@ const projectsList = [
     text: 'описание проекта',
     thumb: '',
     img: ['', ''],
-    seoUrl: 'nev-sedrus'
+    seoUrl: 'nev-sedrus',
+    tag: 'roof'
   },
   {
     name: 'г. Невинномысск, гипермаркет «Карусель»',
@@ -228,7 +248,8 @@ const projectsList = [
     text: 'описание проекта',
     thumb: '',
     img: ['', ''],
-    seoUrl: 'nev-karusel'
+    seoUrl: 'nev-karusel',
+    tag: 'wall'
   },
   {
     name: 'г. Невинномысск, «Невинномысский радиаторный завод», ул. Низяева, 1 Ж',
@@ -239,7 +260,8 @@ const projectsList = [
     text: 'описание проекта',
     thumb: '',
     img: ['', ''],
-    seoUrl: 'nev-radiator'
+    seoUrl: 'nev-radiator',
+    tag: 'roof'
   },
   {
     name: 'г. Грозный, Многофункциональный выставочный комплекс «Ахмат Тауэр»',
@@ -250,7 +272,8 @@ const projectsList = [
     text: 'описание проекта',
     thumb: '',
     img: ['', ''],
-    seoUrl: 'groz-ahmattauer'
+    seoUrl: 'groz-ahmattauer',
+    tag: 'roof'
   }
 ];
 
