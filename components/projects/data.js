@@ -7,7 +7,7 @@ const projectsList = [
     sqare: '10 000 м2',
     text: 'описание проекта',
     thumb: '',
-    img: ['', ''],
+    img: [],
     seoUrl: 'nn-lerya',
     tag: 'wall'
   },
@@ -81,6 +81,18 @@ const projectsList = [
     thumb: '',
     img: ['', ''],
     seoUrl: 'mah-first-dev',
+    tag: 'wall'
+  },
+  {
+    name: 'г. Будённовск, Спортивно-оздоровительный комплекс «Лукоморье»',
+    date: '11-12.2016г',
+    address: 'адрес',
+    material: 'Стеновые сэндвич-панели «Изопан», 150мм, МВ',
+    sqare: '5 500 м2',
+    text: 'описание проекта',
+    thumb: '',
+    img: ['', ''],
+    seoUrl: 'bud-sok-luk',
     tag: 'wall'
   },
   {

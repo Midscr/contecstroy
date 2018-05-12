@@ -42,21 +42,21 @@ main.mainpotfolio
     .row  
       .mainproects__form
          +applicationForm()(containerClass='bg-white')
-      .editor
+      if img[0]
         h2 Фото с объекта  
-      ul.mainpotfolio__fotoList
-        each item in fotoList
-          li.mainpotfolio__items
-            img.mainpotfolio__img(src=item)
-      .mainproects__buttons
-          a(href='#').mainproects__button.btn 1
-          a(href='#').mainproects__button.btn 2
-          a(href='#').mainproects__button.btn 3
-          a(href='#').mainproects__button.btn 4
-          a(href='#').mainproects__button.btn 5
-          a(href='#').mainproects__button.btn 6
-          a(href='#').mainproects__button.btn 7
-          a(href='#').mainproects__button.btn 8
+        ul.mainpotfolio__fotoList
+          each item in img
+            li.mainpotfolio__items
+              .mainpotfolio__img(style='background-image: url(' + item + ')')
+      //- .mainproects__buttons
+      //-     a(href='#').mainproects__button.btn 1
+      //-     a(href='#').mainproects__button.btn 2
+      //-     a(href='#').mainproects__button.btn 3
+      //-     a(href='#').mainproects__button.btn 4
+      //-     a(href='#').mainproects__button.btn 5
+      //-     a(href='#').mainproects__button.btn 6
+      //-     a(href='#').mainproects__button.btn 7
+      //-     a(href='#').mainproects__button.btn 8
   .main__applicationform
     .container
       +applicationForm()

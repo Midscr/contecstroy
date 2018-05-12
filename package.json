@@ -12,6 +12,7 @@
     "debug": "~2.6.9",
     "express": "~4.15.5",
     "express-url-breadcrumb": "0.0.8",
+    "glob": "^7.1.2",
     "jquery": "^3.2.1",
     "morgan": "~1.9.0",
     "mysql": "^2.15.0",
@@ -19,6 +20,7 @@
     "pug": "2.0.0-beta11",
     "reset-css": "^2.2.1",
     "serve-favicon": "~2.4.5",
+    "sharp": "^0.20.2",
     "smooth-scroll": "^12.1.5",
     "sms_ru": "0.0.1",
     "vex-js": "^4.0.1"

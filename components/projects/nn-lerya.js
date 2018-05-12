@@ -6,8 +6,7 @@ module.exports = function(city) {
     material: 'Стеновые сэндвич-панели «Trimo», 100 и 120мм, МВ',
     sqare: '10 000 м2',
     text: 'описание проекта',
-    thumb: '',
-    img: ['', '']
+    thumb: ''
   };
 
   return info;

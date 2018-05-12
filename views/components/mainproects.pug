@@ -27,7 +27,11 @@ section.mainproects
       ul.col-xs-12.mainproects__list
         each item in projectsInfo.projectsList
           li.mainproects__items.col-xs-12
-            img.mainproects__img.col-md-4.col-sm-6(src=item.thumb)
+            if item.thumb
+              .mainproects__img.col-md-4.col-sm-6(style='background-image: url(' + item.thumb + ')')
+            else
+              .mainproects__img.col-md-4.col-sm-6(style='background-image: url(/img/gray-foto.jpg)')
+              
             .mainproects__text.col-md-8.col-sm-6
               p.mainproects__heading=item.name
               p= 'Материалы: ' + item.material

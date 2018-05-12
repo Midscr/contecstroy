@@ -20,6 +20,7 @@ const panelsList = require('../components/panelsList');
 const roofs = require('../components/dataRoofs');
 const roofsList = require('../components/roofsList');
 const url = require('url');
+const fs = require('fs');
 
 let emptyCity = {
   population: 1000000,
@@ -54,6 +55,7 @@ function initPagesRoutes(app) {
         if (crumbs) {
           crumbs.label = 'Проекты';
         }
+
         if (!city && req.headers.host != domain) {
           let err = new Error('Not Found');
           err.status = 404;
