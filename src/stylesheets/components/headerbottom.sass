@@ -39,6 +39,7 @@
     transition: .5s opacity
     opacity: 0
     z-index: 1
+    text-align: left
     &_child
       position: absolute
       left: 263px
@@ -90,5 +91,20 @@
   border-radius: 0
   min-height: 0
   background-color: $color-dark-gray
+.arrow
+  &:before, &:after
+    content: ''
+    position: absolute
+    width: 10px
+    height: 2px
+    background: $color-text-light-gray
+    right: 15px
+    
+  &:after
+    transform: rotate(-45deg)
+    top: 16px
+  &:before
+    top: 10px
+    transform: rotate(45deg)
 .pad
-  padding: 0      
+  padding: 0    

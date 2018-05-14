@@ -7,47 +7,20 @@ module.exports = function(city) {
     company: {
       name: 'ООО "КонтекСтрой"',
       logo: '/img/logo.jpg',
-      workTime: 'Пн-Сб: 07:00-21:00',
-      weekend: 'Вс',
+      workTime: 'Пн-Пт: 09:00-18:00',
+      weekend: 'Сб, Вс',
       tel: '8(000) 000-00-00',
       fax: '8(000) 000-00-00',
       email: 'info@contecstroy.ru',
-      messengers: [
-        {
-          name: 'Viber',
-          img: '/img/viber-logo.png',
-          link: '/'
-        },
-        {
-          name: 'Whatsapp',
-          img: '/img/whatsapp-logo.png',
-          link: '/'
-        },
-        {
-          name: 'Telegram',
-          img: '/img/telegram-logo.png',
-          link: '/'
-        }
-      ],
-      socials: [
-        {
-          name: 'Vkontakte',
-          img: '/img/vk-logo.png',
-          link: '/'
-        },
-        {
-          name: 'Instagram',
-          img: '/img/instagram-logo.png',
-          link: '/'
-        }
-      ],
+      messengers: [],
+      socials: [],
       legal: [
-        ['Наименование', 'ИП Хализов Александр Сергеевич'],
-        ['ИНН', '260806481409'],
-        ['ОГРН', '315265100027855'],
-        ['Расчетный счет', '40802810200000153158'],
-        ['Банк', 'АО "Тинькофф Банк"'],
-        ['БИК Банка', '044525974']
+        ['Наименование', 'ООО «КонтекСтрой»'],
+        ['ИНН', '2635217232'],
+        ['ОГРН', '1162651053652'],
+        ['Расчетный счет', '40702810903480000374'],
+        ['Банк', 'Краснодарский филиал ПАО банка «ФК Открытие»'],
+        ['БИК Банка', '040349732']
       ]
     },
     text: {

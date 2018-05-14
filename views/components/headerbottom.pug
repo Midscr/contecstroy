@@ -23,7 +23,7 @@ section.headerbottom
                   ul.headerbottom__subnav
                     if item.subMenuChild
                       li.headerbottom__subitem 
-                        span= item.subMenuChild[0].tag
+                        span.arrow= item.subMenuChild[0].tag
                         ul.headerbottom__subnav_child
                           each child in item.subMenuChild
                             li.headerbottom__subitem_child
