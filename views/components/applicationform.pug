@@ -6,17 +6,20 @@ mixin applicationForm(type)
         input.form__input.name(
           type="text"
           placeholder="Ваше имя"
+          requared
           )
         input.form__input.number(
           type="text"
           placeholder="Ваш номер"
           data-inputmask="'mask': '+7(999) 999-9999'"
+          requared
         )
         button.form__btn.btn(
           disabled="disabled") ОСТАВИТЬ ЗАЯВКУ    
       label
         input.form__checkbox(
           type="checkbox"
+          requared
           )
         span.form__checkbox-custom
       span.form__label Даю согласие на обработку персональных данных

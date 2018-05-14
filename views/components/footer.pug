@@ -1,41 +1,38 @@
--
-  let footerList = [
-    {main: {text:"Главная категория", link: "#"}, additional: [{text: "Внутренняя категория", link: "#"},{text: "Внутренняя категория", link: "#"},{text: "Внутренняя категория", link: "#"},{text: "Внутренняя категория", link: "#"}]},
-    {main: {text:"Главная категория", link: "#"}, additional: [{text: "Внутренняя категория", link: "#"},{text: "Внутренняя категория", link: "#"},{text: "Внутренняя категория", link: "#"},{text: "Внутренняя категория", link: "#"}]},
-    {main: {text:"Контакты", link: "#"}, additional: [{text: "Доставка", link: "#"},{text: "Оплата", link: "#"},{text: "О компании", link: "#"},{text: "Гарантии на услуги", link: "#"}]}
-  ];
--
-  let numberCall = ["8(495) 300-00-00", "8(804) 333-70-60", "Звонок по России бесплатный"];
-
--
-  let pickupList = [{text: "Пункты самовывоза в Ставрполе", link: "#"},
-  {text: "Доехать на личном транспорте", link: "#"},
-  {text: "На общественном транспорте", link: "#"},
-  {text: "Дойти пешком", link: "#"}];
--
-  let paymentmethodList = [{image: "/img/visa.png"},
-  {image: "/img/mastercard.png"},
-  {image: "/img/Tinkoff.png"},
-  {image:"/img/sberbank.png"}, 
-  {image:"/img/yandex.png"}];
-
 footer.footerprev
   .container
     .row
-      .col-md-6.col-sm-8
-        each item in footerList
-          ul.footerprev__list
-            li.footerprev__item
-              a(href=item.main.link)=item.main.text
-            each add in item.additional
-              li.footerprev__items
-                a(href=add.link)=add.text      
-      .col-md-6.col-sm-4.col-xs-12
+      .col-md-10.col-sm-8
+        ul.footerprev__list
+          li.footerprev__item
+            p=navBottom[1].title
+          each subLink in navBottom[1].subMenu
+            li.footerprev__items
+              a(href=subLink.links)=subLink.text
+        ul.footerprev__list
+          li.footerprev__item
+            p=navBottom[1].subMenuChild[0].tag
+          each subLink in navBottom[1].subMenuChild
+            li.footerprev__items
+              a(href=subLink.links)=subLink.text
+        ul.footerprev__list
+          li.footerprev__item
+            p Остальные услуги
+          li.footerprev__items
+            a(href=navBottom[2].link)=navBottom[2].title
+          li.footerprev__items
+            a(href=navBottom[3].link)=navBottom[3].title
+        ul.footerprev__list
+          li.footerprev__item
+            a(href=navBottom[5].link)=navBottom[5].title
+          each subLink in navTop
+            li.footerprev__items
+              a(href=subLink.link)=subLink.title
+      .col-md-2.col-sm-4.col-xs-12
         .row  
-          .col-md-5.col-md-offset-7.text-right.col-xs-12
+          .text-right.col-xs-12
             ul.footerprev__numberslist
-              each item in numberCall
-                li.footerprev__numbers=item
+              li.footerprev__numbers=contactInfo.company.tel
+              li.footerprev__numbers Звонок по России бесплатный
           //- .col-md-6.col-xs-12
           //-   ul.footerprev__pickupList
           //-     each item in pickupList
