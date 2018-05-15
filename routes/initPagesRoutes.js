@@ -39,8 +39,8 @@ function initPagesRoutes(app) {
   Promise.all([db.getCities(), db.getDeliveryAddresses()]).then(data => {
     const cities = data[0];
     const deliveryAddresses = data[1];
-    // const domain = 'localhost:4400';
-    const domain = 'contecstroy.ru';
+    const domain = 'localhost:4400';
+    // const domain = 'contecstroy.ru';
     const fromEmail = 'rb@ray-bit.ru';
     const toEmail = 'rb@ray-bit.ru';
 
@@ -374,15 +374,6 @@ function initPagesRoutes(app) {
         let noCity = cities.filter(item => item.cityEn.toLowerCase() === 'stavropol')[0];
         emptyCity.postAddress = noCity.postAddress;
         req.app.locals.breadcrumb.find(item => item.label === 'Home').label = 'Главная';
-        if (req.app.locals.breadcrumb.find(item => item.label === 'industrial floors')) {
-          req.app.locals.breadcrumb.find(item => item.label === 'industrial floors').label = 'Промышленные полы';
-        }
-        if (req.app.locals.breadcrumb.find(item => item.label === 'panels')) {
-          req.app.locals.breadcrumb.find(item => item.label === 'panels').label = 'Сэндвич панели';
-        }
-        if (req.app.locals.breadcrumb.find(item => item.label === 'roofs')) {
-          req.app.locals.breadcrumb.find(item => item.label === 'roofs').label = 'Мягкая кровля';
-        }
 
         let crumbs = req.app.locals.breadcrumb.find(item => item.url === 'http://' + domain + req.url);
 
