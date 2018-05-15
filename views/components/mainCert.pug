@@ -23,6 +23,11 @@ main.mainabout
         //-       li.main__items
         //-         a(href=item.link)=item.text
       .editor.mainabout__keyspecialists!= certInfo.content.text
+      .cert
+        each img in certInfo.content.img
+          .cert__img
+            img(src="/img/cert/" + img, alt="")
+        
       
   .main__applicationform
     .container
