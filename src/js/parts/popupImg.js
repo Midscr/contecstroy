@@ -29,7 +29,28 @@ $(document).ready(function() {
       unsafeContent: sliderImg,
       contentClassName: 'imggallery',
       afterOpen: function() {
-        $('.slider-img').slick({ dots: true, infinite: true, speed: 500, fade: true, cssEase: 'linear' });
+        $('.slider-img').slick({
+          dots: true,
+          infinite: true,
+          speed: 500,
+          fade: true,
+          cssEase: 'linear',
+          responsive: [
+            {
+              breakpoint: 600,
+              settings: {
+                dots: false
+              }
+            },
+            {
+              breakpoint: 400,
+              settings: {
+                arrows: false,
+                dots: false
+              }
+            }
+          ]
+        });
         $('.slider-img').slick('slickGoTo', activeImg);
       }
     });

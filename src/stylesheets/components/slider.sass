@@ -7,8 +7,8 @@
     max-width: 800px
   @media(max-width: 850px)
     max-width: 600px
-  @media(max-width: 700px)
-    max-width: 250px   
+  @media(max-width: 710px)
+    max-width: 100%   
   &__frame
     overflow: hidden
     border-radius: 3px
@@ -33,7 +33,7 @@
     width: 35%
     @media(max-width: 1050px)
       width: 25%
-      vertical-align: top
+      vertical-align: middle
     @media(max-width: 710px)
       display: none  
   &__right
@@ -45,9 +45,9 @@
     & p 
       margin: 0
     @media(max-width: 1050px)
-      width: 50%
+      width: 70%
       padding-left: 10px
-    @media(max-width: 700px)
+    @media(max-width: 710px)
       width: 100% 
   &__comment
     min-height: 165px
@@ -87,5 +87,11 @@
       margin-right: 0
     &.active
       background-color: $color-red  
- 
+
+.cert
+  img
+    margin: 0 auto
+
+.slick-prev:before, .slick-next:before
+  color: $color-dark-gray
 

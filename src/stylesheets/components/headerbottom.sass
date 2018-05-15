@@ -42,12 +42,17 @@
     text-align: left
     &_child
       position: absolute
-      left: 263px
+      left: 100%
       top: 0
       width: 250px
       background-color: $color-dark-gray
       opacity: 0
       transition: all .4s ease
+      @media(max-width: 768px)
+        position: static
+        width: 100%
+        opacity: 1
+        padding-left: 20px
     @media(max-width: 767px)
       position: static
       overflow: hidden
@@ -99,12 +104,19 @@
     height: 2px
     background: $color-text-light-gray
     right: 15px
-    
+    @media(max-width: 768px)
+      right: 18px    
   &:after
     transform: rotate(-45deg)
     top: 16px
+    @media(max-width: 768px)
+      transform: rotate(0deg)
+      top: 15px
   &:before
     top: 10px
     transform: rotate(45deg)
+    @media(max-width: 768px)
+      transform: rotate(90deg)
+      top: 15px
 .pad
   padding: 0    
